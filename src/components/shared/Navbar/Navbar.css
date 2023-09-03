@@ -1,0 +1,12 @@
+#sidebar>a.active {
+    background: rgb(232, 84, 98);
+    background: linear-gradient(142deg, rgba(232, 84, 98, 1) 0%, rgba(241, 118, 38, 1) 100%);
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    #sidebar>a.active {
+        background: #D15C03;
+        color: #000;
+    }
+}
