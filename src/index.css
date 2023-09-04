@@ -15,6 +15,13 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
     background: #f7fafa;
+}
+
+p,
+a,
+button,
+input,
+textarea {
     font-family: 'Fira Sans', sans-serif;
 }
 
