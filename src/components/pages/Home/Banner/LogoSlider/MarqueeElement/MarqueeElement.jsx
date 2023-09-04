@@ -48,4 +48,10 @@ const Image = styled.img`
   border-radius: 0.5rem;
   padding: 5px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: 0.5s linear;
+  transform: scale(1);
+  &:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+  }
 `;
