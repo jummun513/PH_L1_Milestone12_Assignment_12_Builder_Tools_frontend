@@ -14,7 +14,7 @@ const Navbar = () => {
     // const [openSubmenu, setOpenSubmenu] = useState(false);
 
 
-    const user = false;
+    const user = true;
 
     const navItem = [
         { href: '/', name: 'Home' },
@@ -127,7 +127,7 @@ const Navbar = () => {
                 </div>
                 {
                     openNavbar &&
-                    <ul className="block md:hidden bg-gray-50 text-gray-950 space-y-5 text-xs sm:text-sm bg-gradient-to-r from-primary to-grad">
+                    <ul className="block absolute z-10 w-full md:hidden bg-gray-50 text-gray-950 space-y-5 text-xs sm:text-sm bg-gradient-to-r from-primary to-grad">
                         {navItem.map((item, idx) => (
                             <li id='sidebar' key={idx}>
                                 <NavLink to={item.href} className="uppercase flex py-2 w-full text-gray-50 hover:bg-secondary justify-center ease-linear duration-150">
