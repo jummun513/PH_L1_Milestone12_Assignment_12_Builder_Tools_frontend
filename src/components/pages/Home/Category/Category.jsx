@@ -31,13 +31,13 @@ const Category = () => {
     })
 
     return (
-        <div className="mt-48 mb-60 bg-[#DFE0DF]">
+        <div className="pt-40 md:pt-60 mb-60 bg-[#DFE0DF]">
             <div className="mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl
         xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5">
-                <h1 className="text-center uppercase font-black text-gray-950 text-5xl">Shop By Category</h1>
-                <p className="text-lg text-center mt-8 text-gray-600">You contribute over half of your life operating. Let us help you find the right fit for you or your corporation.</p>
+                <h1 className="text-center font-sans uppercase font-[900] text-gray-950 text-3xl md:text-5xl">Shop By Category</h1>
+                <p className="text-sm md:text-lg text-center mt-8 text-gray-600">You contribute over half of your life operating. Let us help you find the right fit for you or your corporation.</p>
             </div>
-            <div className="bg-white py-8 md:py-10 mt-16">
+            <div className="bg-white py-8 md:py-10 mt-10 md:mt-16">
                 <div className="navigation-wrapper mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl
         xxl:max-w-screen-xxl px-10 md:px-12 xl:px-16">
                     <div ref={sliderRef} className="keen-slider">

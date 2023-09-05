@@ -1,0 +1,9 @@
+.on-hover-card:hover .card-zoom-image {
+    transform: scale(1.3);
+}
+
+@media screen and (max-width: 768px) {
+    .on-hover-card:hover .card-zoom-image {
+        transform: scale(1.1);
+    }
+}

@@ -6,6 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        topOffer1:
+          "url('/src/assets/images/offer/ads-1.png')",
+        topOffer2:
+          "url('/src/assets/images/offer/ads-2.png')"
+      },
       colors: {
         'navBg': '#2F4858',
         'primary': '#F17626',
