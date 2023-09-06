@@ -10,7 +10,6 @@ import { MdElectricalServices } from 'react-icons/md';
 import { GiRobotGrab, GiFreemasonry } from 'react-icons/gi';
 
 
-
 const Category = () => {
     const [, setCurrentSlide] = useState(0)
     const [loaded, setLoaded] = useState(false)
@@ -31,7 +30,7 @@ const Category = () => {
     })
 
     return (
-        <div className="pt-40 md:pt-60 mb-60 bg-[#DFE0DF]">
+        <div className="h-fit pt-40 md:pt-60 mb-48 lg:mb-60 bg-[#f3f3f3]">
             <div className="mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl
         xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5">
                 <h1 className="text-center font-sans uppercase font-[900] text-gray-950 text-3xl md:text-5xl">Shop By Category</h1>
@@ -96,8 +95,47 @@ const Category = () => {
                     )}
                 </div >
             </div>
-            <div className="h-[100vh] w-full">Hello</div>
-        </div >
+            <div className='py-24 lg:py-36 mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5'>
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-y-5 lg:gap-y-0 md:gap-x-5'>
+                    <div className="group min-w-[300px] flex items-start bg-white duration-200 ease-linear hover:bg-primary hover:text-white text-slate-950">
+                        <div className="w-1/5 flex justify-center">
+                            <div className="bg-[#DFE0DF] duration-200 ease-linear group-hover:bg-white group-hover:text-primary p-3 font-sans font-black text-3xl">
+                                1
+                            </div>
+                        </div>
+                        <div className="w-4/5  flex flex-col items-start justify-center p-4 sm:p-6">
+                            <h2 className="text-base md:text-xl font-bold font-sans">GOOD DESIGN & FUNCTIONALITY</h2>
+                            <p className="text-xs md:text-sm duration-200 ease-linear group-hover:text-gray-100 text-gray-800 mt-2">The first of the month is coming, we have to get money, we have to get money. It cost money to eat and they don’t want you</p>
+                            <button className="text-sm md:text-base duration-200 ease-linear text-primary group-hover:text-black font-bold mt-2">Read more..</button>
+                        </div>
+                    </div>
+                    <div className="group min-w-[300px] flex items-start bg-primary hover:bg-white duration-200 ease-linear hover:text-black text-slate-50">
+                        <div className="w-1/5 flex justify-center">
+                            <div className="bg-white group-hover:bg-[#DFE0DF] text-primary group-hover:text-black duration-200 ease-linear p-3 font-sans font-black text-3xl">
+                                2
+                            </div>
+                        </div>
+                        <div className="w-4/5  flex flex-col items-start justify-center p-4 sm:p-6">
+                            <h2 className="text-base md:text-xl font-bold font-sans">BEAUTIFUL LOOK ON ANY DEVICE</h2>
+                            <p className="text-xs md:text-sm group-hover:text-gray-800 duration-200 ease-linear text-gray-100 mt-2">The first of the month is coming, we have to get money, we have to get money. It cost money to eat and they don’t want you</p>
+                            <button className="text-sm md:text-base text-gray-950 group-hover:text-primary duration-200 ease-linear font-bold mt-2">Read more..</button>
+                        </div>
+                    </div>
+                    <div className="group min-w-[300px] flex items-start bg-white duration-200 ease-linear hover:bg-primary hover:text-white text-slate-950">
+                        <div className="w-1/5 flex justify-center">
+                            <div className="bg-[#DFE0DF] duration-200 ease-linear group-hover:bg-white group-hover:text-primary p-3 font-sans font-black text-3xl">
+                                3
+                            </div>
+                        </div>
+                        <div className="w-4/5  flex flex-col items-start justify-center p-4 sm:p-6">
+                            <h2 className="text-base md:text-xl font-bold font-sans">LONG SHELF LIFE OF ALL TOOLS</h2>
+                            <p className="text-xs md:text-sm duration-200 ease-linear group-hover:text-gray-100 text-gray-800 mt-2">The first of the month is coming, we have to get money, we have to get money. It cost money to eat and they don’t want you</p>
+                            <button className="text-sm md:text-base duration-200 ease-linear text-primary group-hover:text-black font-bold mt-2">Read more..</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 

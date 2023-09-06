@@ -10,7 +10,7 @@ const TopOffer = () => {
     }, [])
 
     return (
-        <div className="bg-[#DFE0DF] pt-36 md:pt-48">
+        <div className="bg-[#f3f3f3] pt-36 md:pt-48">
             <div className='mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl
 xxl:max-w-screen-xxl px-2 md:px-3 lg:px-20'>
                 <div className="md:flex">

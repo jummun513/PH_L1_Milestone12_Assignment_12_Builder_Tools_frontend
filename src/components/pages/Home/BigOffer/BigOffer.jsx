@@ -20,22 +20,22 @@ const BigOffer = () => {
                     data-aos-delay="50"
                     data-aos-duration="1000"
                     data-aos-easing="ease-in-out"
-                    data-aos-once="false" className='h-[75px] w-[75px] md:h-24 md:w-24 flex flex-col justify-center items-center rounded-full bg-[#402E32] text-lg md:text-2xl font-bold p-3 md:p-5 mr-1 md:mr-2'>{days} <hr className='w-full' /> <span className='text-sm md:text-lg font-normal'>Days</span></div>
+                    data-aos-once="true" className='h-[75px] w-[75px] md:h-24 md:w-24 flex flex-col justify-center items-center rounded-full bg-[#402E32] text-lg md:text-2xl font-bold p-3 md:p-5 mr-1 md:mr-2'>{days} <hr className='w-full' /> <span className='text-sm md:text-lg font-normal'>Days</span></div>
                 <div data-aos="flip-left" data-aos-offset="200"
                     data-aos-delay="150"
                     data-aos-duration="1000"
                     data-aos-easing="ease-in-out"
-                    data-aos-once="false" className='h-[75px] w-[75px] md:h-24 md:w-24 flex flex-col justify-center items-center rounded-full bg-[#402E32] text-lg md:text-2xl font-bold p-3 md:p-5 mr-1 md:mr-2'>{hours} <hr className='w-full' /> <span className='text-sm md:text-lg font-normal'>Hours</span></div>
+                    data-aos-once="true" className='h-[75px] w-[75px] md:h-24 md:w-24 flex flex-col justify-center items-center rounded-full bg-[#402E32] text-lg md:text-2xl font-bold p-3 md:p-5 mr-1 md:mr-2'>{hours} <hr className='w-full' /> <span className='text-sm md:text-lg font-normal'>Hours</span></div>
                 <div data-aos="flip-down" data-aos-offset="200"
                     data-aos-delay="250"
                     data-aos-duration="1000"
                     data-aos-easing="ease-in-out"
-                    data-aos-once="false" className='h-[75px] w-[75px] md:h-24 md:w-24 flex flex-col justify-center items-center rounded-full bg-[#402E32] text-lg md:text-2xl font-bold p-3 md:p-5 mr-1 md:mr-2'>{minutes} <hr className='w-full' /> <span className='text-sm md:text-lg font-normal'>Minutes</span></div>
+                    data-aos-once="true" className='h-[75px] w-[75px] md:h-24 md:w-24 flex flex-col justify-center items-center rounded-full bg-[#402E32] text-lg md:text-2xl font-bold p-3 md:p-5 mr-1 md:mr-2'>{minutes} <hr className='w-full' /> <span className='text-sm md:text-lg font-normal'>Minutes</span></div>
                 <div data-aos="flip-right" data-aos-offset="200"
                     data-aos-delay="350"
                     data-aos-duration="1000"
                     data-aos-easing="ease-in-out"
-                    data-aos-once="false" className='h-[75px] w-[75px] md:h-24 md:w-24 flex flex-col justify-center items-center rounded-full bg-[#402E32] text-lg md:text-2xl font-bold p-3 md:p-5'>{seconds} <hr className='w-full' /> <span className='text-sm md:text-lg font-normal'>Seconds</span></div>
+                    data-aos-once="true" className='h-[75px] w-[75px] md:h-24 md:w-24 flex flex-col justify-center items-center rounded-full bg-[#402E32] text-lg md:text-2xl font-bold p-3 md:p-5'>{seconds} <hr className='w-full' /> <span className='text-sm md:text-lg font-normal'>Seconds</span></div>
             </div>;
         }
     };
@@ -71,7 +71,7 @@ const BigOffer = () => {
                     </div>
                 </div>
             </div>
-            <div className='bg-[#DFE0DF] h-[60rem] xsm:h-[56rem] md:h-[40rem] xl:h-[36rem] mb-20 mx-auto xsm:max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-xxl xxl:max-w-screen-xxxl'>
+            <div className='bg-[#f3f3f3] h-[60rem] xsm:h-[56rem] md:h-[40rem] xl:h-[36rem] mb-20 mx-auto xsm:max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-xxl xxl:max-w-screen-xxxl'>
                 <div className='mx-auto pt-48 lg:pt-96 xl:pt-80 xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5'>
                     <div className='grid grid-cols-1 lg:grid-cols-3 gap-y-5 lg:gap-y-0 md:gap-x-5'>
                         <div data-aos="fade-up" data-aos-offset="200"
