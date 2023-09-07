@@ -11,6 +11,7 @@ const BigOffer = () => {
         AOS.init();
     }, [])
 
+
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
             return <div></div>
@@ -102,7 +103,7 @@ const BigOffer = () => {
                             data-aos-duration="1000"
                             data-aos-easing="ease-in-out"
                             data-aos-once="false" className="card flex-col sm:flex-row card-side bg-grad shadow-xl rounded-none">
-                            <figure><img className='h-24 w-24 object-cover p-3' src='https://i.ibb.co/5460ZbN/return.png' alt='' /></figure>
+                            <figure><img className='h-24 w-24 object-contain md:object-cover p-3' src='https://i.ibb.co/5460ZbN/return.png' alt='' /></figure>
                             <div className="card-body text-slate-50 flex flex-col items-center sm:items-start">
                                 <h2 className="card-title -mt-5 sm:mt-0">100% MONEY BACK</h2>
                                 <p>In 365day any problem can be returned.</p>

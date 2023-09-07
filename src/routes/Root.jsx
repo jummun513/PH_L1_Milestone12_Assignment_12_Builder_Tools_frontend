@@ -4,6 +4,8 @@ import Home from '../components/pages/Home/Home'
 import Blogs from "../components/pages/Blogs/Blogs";
 import Login from "../components/pages/Login/Login";
 import Register from "../components/pages/Register/Register";
+import Loading from "../components/shared/Loading/Loading";
+
 
 export const router = createBrowserRouter([
     {
@@ -32,4 +34,8 @@ export const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: '/loading',
+        element: <Loading></Loading>,
+    }
 ]);
