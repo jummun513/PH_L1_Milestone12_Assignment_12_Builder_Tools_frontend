@@ -44,15 +44,15 @@ const BigOffer = () => {
 
     return (
         <div>
-            <h1 data-aos="fade-down" data-aos-offset="200"
+            <h1 data-aos="fade-down"
                 data-aos-delay="0"
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-out"
                 data-aos-once="false"
-                className='relative mt-40 top-8 md:top-20 md:mt-0 lg:top-24 font-black text-7xl xsm:text-8xl sm:text-9xl md:text-[11rem] lg:text-[15rem] xl:text-[23rem] text-center text-slate-200 mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl'>Big Offer</h1>
+                className='relative md:top-14 lg:top-20 xl:top-28 xxl:top-36 font-black text-7xl sm:text-9xl md:text-[10rem] lg:text-[14rem] xl:text-[18rem] xxl:text-[23rem] text-center text-slate-200 mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl'>Big Offer</h1>
             <div className='bg-gradient-to-b from-grad to-primary h-[40rem] md:h-[60rem] lg:h-[40rem]'>
-                <div className='flex flex-col-reverse lg:flex-row justify-center items-center pt-20 md:pt-32 lg:pt-56 pb-20 mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5'>
-                    <div className='text-white text-center md:text-left lg:w-[40%] mt-5 lg:mt-0'>
+                <div className='flex flex-col-reverse lg:flex-row justify-center pt-20 md:pt-32 lg:pt-56 pb-20 mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5'>
+                    <div className='text-white text-center pt-14 lg:pt-0 md:text-left lg:w-[40%] mt-5 lg:mt-0'>
                         <h2 className='text-2xl lg:text-5xl uppercase'>Deals of the weeks</h2>
                         <p className='text-5xl lg:text-8xl mt-3 lg:mt-5 font-[900]'>SALE <span>50<sup>%</sup></span> OFF</p>
                         <h3 className='text-2xl font-semibold mt-5 lg:mt-10'>Concrete saw Cutting Abrasive</h3>
@@ -72,8 +72,8 @@ const BigOffer = () => {
                     </div>
                 </div>
             </div>
-            <div className='bg-[#f3f3f3] h-[60rem] xsm:h-[56rem] md:h-[40rem] xl:h-[36rem] mb-20 mx-auto xsm:max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-xxl xxl:max-w-screen-xxxl'>
-                <div className='mx-auto pt-48 lg:pt-96 xl:pt-80 xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5'>
+            <div className='bg-[#f3f3f3] h-[60rem] xsm:h-[56rem] md:h-[48rem] xl:h-[36rem] mb-20 mx-auto xsm:max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-xxl xxl:max-w-screen-xxxl'>
+                <div className='mx-auto pt-48 md:pt-[18rem] lg:pt-96 xl:pt-80 xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5'>
                     <div className='grid grid-cols-1 lg:grid-cols-3 gap-y-5 lg:gap-y-0 md:gap-x-5'>
                         <div data-aos="fade-up" data-aos-offset="200"
                             data-aos-delay="0"

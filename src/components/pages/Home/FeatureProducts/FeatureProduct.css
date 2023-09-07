@@ -2,3 +2,19 @@
     background: black !important;
     color: white !important;
 }
+
+.react-tabs__tab-panel--selected {
+    margin-top: 6rem;
+}
+
+@media screen and (min-width: 640px) {
+    .react-tabs__tab-panel--selected {
+        margin-top: 8rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .react-tabs__tab-panel--selected {
+        margin-top: 9rem;
+    }
+}
