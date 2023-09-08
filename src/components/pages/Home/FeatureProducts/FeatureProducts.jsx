@@ -6,6 +6,7 @@ import { useQuery } from "react-query";
 import fetchData from "../../../../hooks/fetchData";
 import Loading from '../../../shared/Loading/Loading';
 import ToolsCard from "../../../shared/ToolsCard/ToolsCard";
+import { Link } from "react-router-dom";
 
 const FeatureProducts = () => {
     const { data, isLoading, error } = useQuery("toolsData", () => fetchData('http://localhost:8080/tools'));
@@ -26,7 +27,7 @@ const FeatureProducts = () => {
 
 
     return (
-        <div className="h-fit mb-16 md:mb-32 lg:mb-36">
+        <div className="h-fit">
             <BackGround className="relative bg-primary h-80 sm:h-72 bg-no-repeat bg-contain bg-center">
                 <div className="h-full w-full absolute backdrop-blur-sm top-0"></div>
                 <div className="relative z-10 w-full h-full flex flex-col py-4 md:py-14 justify-between items-center text-white">
@@ -47,32 +48,44 @@ xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5">
                         <Tab className='bg-[#f1f1f1] cursor-pointer py-3 text-sm md:text-base px-5 font-bold flex items-center justify-center hover:bg-black hover:text-white duration-200 ease-linear'>Heavy Tools</Tab>
                     </TabList>
                     <TabPanel>
-                        <CardContainer>
-                            {
-                                mandatory.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
-                            }
-                        </CardContainer>
+                        <div>
+                            <CardContainer>
+                                {
+                                    mandatory.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
+                                }
+                            </CardContainer>
+                            <p className="text-center mt-20 md:mt-32"><Link><button className="btn btn-wide text-slate-50">See All Tools</button></Link></p>
+                        </div>
                     </TabPanel>
                     <TabPanel>
-                        <CardContainer>
-                            {
-                                ladderStair.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
-                            }
-                        </CardContainer>
+                        <div>
+                            <CardContainer>
+                                {
+                                    ladderStair.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
+                                }
+                            </CardContainer>
+                            <p className="text-center mt-20 md:mt-32"><Link><button className="btn btn-wide text-slate-50">See All Tools</button></Link></p>
+                        </div>
                     </TabPanel>
                     <TabPanel>
-                        <CardContainer>
-                            {
-                                electric.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
-                            }
-                        </CardContainer>
+                        <div>
+                            <CardContainer>
+                                {
+                                    electric.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
+                                }
+                            </CardContainer>
+                            <p className="text-center mt-20 md:mt-32"><Link><button className="btn btn-wide text-slate-50">See All Tools</button></Link></p>
+                        </div>
                     </TabPanel>
                     <TabPanel>
-                        <CardContainer>
-                            {
-                                heavy.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
-                            }
-                        </CardContainer>
+                        <div>
+                            <CardContainer>
+                                {
+                                    heavy.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
+                                }
+                            </CardContainer>
+                            <p className="text-center mt-20 md:mt-32"><Link><button className="btn btn-wide text-slate-50">See All Tools</button></Link></p>
+                        </div>
                     </TabPanel>
                 </Tabs>
             </div>

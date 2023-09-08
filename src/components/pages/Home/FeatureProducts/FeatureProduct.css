@@ -16,5 +16,6 @@
 @media screen and (min-width: 768px) {
     .react-tabs__tab-panel--selected {
         margin-top: 9rem;
+        display: block;
     }
 }
