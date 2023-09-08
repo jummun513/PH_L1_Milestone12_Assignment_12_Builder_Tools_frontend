@@ -4,6 +4,7 @@ import Category from "./Category/Category";
 import TopOffer from "./TopOffer/TopOffer";
 import FeatureProducts from "./FeatureProducts/FeatureProducts";
 import Quote from "./Quote/Quote";
+import Reviews from "./Reviews/Reviews";
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <FeatureProducts></FeatureProducts>
             <Quote></Quote>
             <BigOffer></BigOffer>
+            <Reviews></Reviews>
         </div>
     );
 };

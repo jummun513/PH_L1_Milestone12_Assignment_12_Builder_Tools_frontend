@@ -10,6 +10,12 @@
     }
 }
 
+@media screen and (min-width: 2000px) {
+    .fader {
+        height: calc(60vh - 96px);
+    }
+}
+
 .fader__slide {
     width: 100%;
     height: 100%;

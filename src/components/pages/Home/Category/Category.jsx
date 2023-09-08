@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import './Category.css'
@@ -16,6 +15,19 @@ const Category = () => {
     const [sliderRef, instanceRef] = useKeenSlider({
         loop: true,
         mode: "free",
+        breakpoints: {
+            '(max-width: 400px)': {
+                slides: {
+                    perView: 2,
+                }
+            },
+            '(min-width: 1536px)': {
+                slides: {
+                    perView: 4,
+                }
+            }
+
+        },
         slides: {
             perView: 3,
             spacing: 15,
@@ -142,20 +154,22 @@ const Category = () => {
 export default Category;
 
 function Arrow(props) {
+    const { left, onClick } = props;
     return (
         <svg
-            onClick={props.onClick}
-            className={`arrow ${props.left ? "arrow--left" : "arrow--right"
+            onClick={onClick}
+            className={`bg-primary hover:bg-black duration-200 ease-linear w-7 sm:w-10 cursor-pointer px-1 xsm:px-2 h-full absolute top-0 ${left ? "arrow--left" : "arrow--right"
                 }`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
         >
-            {props.left && (
-                <path fill="#DFE0DF" className="hover:fill-primary duration-200 ease-in-out" d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+            {left && (
+                <path fill="white" className="hover:fill-white duration-100 ease-in-out" d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
             )}
-            {!props.left && (
-                <path fill="#DFE0DF" className="hover:fill-primary duration-200 ease-in-out" d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+            {!left && (
+                <path fill="white" className="hover:fill-white duration-100 ease-in-out" d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
             )}
         </svg>
     )
+
 }
