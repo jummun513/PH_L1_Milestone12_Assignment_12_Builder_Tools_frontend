@@ -17,7 +17,7 @@ xxl:max-w-screen-xxl px-2 md:px-3 lg:px-20'>
                     <CardContainer1
                         data-aos="fade-down"
                         data-aos-easing="linear"
-                        data-aos-duration="1000"
+                        data-aos-duration="500"
                         data-aos-once="false"
                         data-aos-mirror="true" className="on-hover-card mb-6 sm:mb-10 md:mb-0 flex justify-between overflow-hidden items-center md:w-1/2 md:me-2 lg:me-8 min-w-[300px] h-[150px] sm:h-[200px] md:h-[250px] lg:h-[300px]">
                         <div className="w-1/2 card-zoom-image bg-topOffer2 h-full transition-all duration-[1.5s] ease-in-out transform bg-center bg-contain bg-no-repeat"></div>
@@ -30,7 +30,7 @@ xxl:max-w-screen-xxl px-2 md:px-3 lg:px-20'>
                     </CardContainer1>
                     <CardContainer2 data-aos="fade-up"
                         data-aos-easing="linear"
-                        data-aos-duration="1000"
+                        data-aos-duration="500"
                         data-aos-once="false"
                         data-aos-mirror="true" className="on-hover-card flex flex-row-reverse justify-between overflow-hidden items-center md:w-1/2 min-w-[300px] h-[150px] sm:h-[200px] md:h-[250px] lg:h-[300px]">
                         <div className="w-1/2 card-zoom-image bg-topOffer1 h-full transition-all duration-1000 ease-in-out transform bg-center bg-contain bg-no-repeat"></div>

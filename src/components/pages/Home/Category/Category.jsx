@@ -1,15 +1,20 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import './Category.css'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PiLadder } from 'react-icons/pi';
 import { LuConstruction } from 'react-icons/lu';
 import { BsTools } from 'react-icons/bs';
 import { MdElectricalServices } from 'react-icons/md';
 import { GiRobotGrab, GiFreemasonry } from 'react-icons/gi';
+import Aos from "aos";
 
 
 const Category = () => {
+    useEffect(() => {
+        Aos.init();
+    }, [])
+
     const [, setCurrentSlide] = useState(0)
     const [loaded, setLoaded] = useState(false)
     const [sliderRef, instanceRef] = useKeenSlider({
@@ -109,7 +114,12 @@ const Category = () => {
             </div>
             <div className='py-24 lg:py-36 mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5'>
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-y-5 lg:gap-y-0 md:gap-x-5'>
-                    <div className="group min-w-[300px] flex items-start bg-white duration-200 ease-linear hover:bg-primary hover:text-white text-slate-950">
+                    <div
+                        data-aos="flip-up"
+                        data-aos-delay="0"
+                        data-aos-duration="500"
+                        data-aos-easing="ease-in-out"
+                        data-aos-once="false" className="group min-w-[300px] flex items-start bg-white duration-200 ease-linear hover:bg-primary hover:text-white text-slate-950">
                         <div className="w-1/5 flex justify-center">
                             <div className="bg-[#DFE0DF] duration-200 ease-linear group-hover:bg-white group-hover:text-primary p-3 font-sans font-black text-3xl">
                                 1
@@ -121,7 +131,12 @@ const Category = () => {
                             <button className="text-sm md:text-base duration-200 ease-linear text-primary group-hover:text-black font-bold mt-2">Read more..</button>
                         </div>
                     </div>
-                    <div className="group min-w-[300px] flex items-start bg-primary hover:bg-white duration-200 ease-linear hover:text-black text-slate-50">
+                    <div
+                        data-aos="flip-down"
+                        data-aos-delay="200"
+                        data-aos-duration="500"
+                        data-aos-easing="ease-in-out"
+                        data-aos-once="false" className="group min-w-[300px] flex items-start bg-primary hover:bg-white duration-200 ease-linear hover:text-black text-slate-50">
                         <div className="w-1/5 flex justify-center">
                             <div className="bg-white group-hover:bg-[#DFE0DF] text-primary group-hover:text-black duration-200 ease-linear p-3 font-sans font-black text-3xl">
                                 2
@@ -133,7 +148,12 @@ const Category = () => {
                             <button className="text-sm md:text-base text-gray-950 group-hover:text-primary duration-200 ease-linear font-bold mt-2">Read more..</button>
                         </div>
                     </div>
-                    <div className="group min-w-[300px] flex items-start bg-white duration-200 ease-linear hover:bg-primary hover:text-white text-slate-950">
+                    <div
+                        data-aos="flip-up"
+                        data-aos-delay="400"
+                        data-aos-duration="500"
+                        data-aos-easing="ease-in-out"
+                        data-aos-once="false" className="group min-w-[300px] flex items-start bg-white duration-200 ease-linear hover:bg-primary hover:text-white text-slate-950">
                         <div className="w-1/5 flex justify-center">
                             <div className="bg-[#DFE0DF] duration-200 ease-linear group-hover:bg-white group-hover:text-primary p-3 font-sans font-black text-3xl">
                                 3

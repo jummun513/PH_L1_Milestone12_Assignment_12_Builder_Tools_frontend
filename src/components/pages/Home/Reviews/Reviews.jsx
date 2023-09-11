@@ -2,17 +2,16 @@
 // import img from '../../../../assets/images/reviews-bg.svg';
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import Test from "../Test/Test";
-import { useState } from "react";
+import Review from "./Review/Review";
 // import styled from "styled-components";
 
 const review = [
     { user: 1 },
-    { user: 2 },
+    { user: 2.5 },
     { user: 3 },
+    { user: 3.5 },
     { user: 4 },
     { user: 5 },
-    { user: 6 },
 ]
 
 const Reviews = () => {
@@ -28,6 +27,7 @@ const Reviews = () => {
             "(max-width: 768px)": {
                 slides: {
                     perView: 1,
+                    spacing: 0
                 }
             }
         },
@@ -48,7 +48,7 @@ const Reviews = () => {
                     if (mouseOver) return
                     timeout = setTimeout(() => {
                         slider.next()
-                    }, 2000)
+                    }, 3000)
                 }
                 slider.on("created", () => {
                     slider.container.addEventListener("mouseover", () => {
@@ -69,25 +69,23 @@ const Reviews = () => {
     );
 
     return (
-        <div className="relative grid z-10 mb-20">
-            <div className="relative mt-40">
-                <div className="bg-primary absolute z-10 w-full blur-[2px] flex justify-center items-center h-36 xsm:h-44 sm:h-56 md:h-72 text-white font-mono font-bold text-lg xsm:text-xl sm:text-4xl md:text-4xl lg:text-6xl">
-                    What Says Our Happy Customers!
+        <div className="relative grid z-10 mb-40 md:mb-56 xl:mb-72">
+            <div className="relative">
+                <div className="bg-primary absolute pb-5 lg:pb-8 h-28 xsm:h-36 sm:h-44 md:h-48 lg:h-60 text-white font-mono font-bold text-lg xsm:text-xl sm:text-4xl md:text-4xl lg:text-6xl z-10 w-full blur-[1px] flex justify-center items-end">
+                    What Say Our Happy Customers?
                 </div>
-                <div className="bg-primary absolute h-36 xsm:h-44 sm:h-56 md:h-72 w-full top-0 z-10 opacity-75"></div>
-                <div className="absolute z-20 text-white flex justify-center items-top w-full mt-10 md:mt-16 text-2xl xsm:text-3xl sm:text-5xl lg:text-7xl font-bold font-serif">Customer Reviews</div>
+                <div className="bg-primary absolute h-28 xsm:h-36 sm:h-44 md:h-48 lg:h-60 w-full top-0 z-10 opacity-75"></div>
+                <div className="absolute z-20 text-white flex justify-center items-top w-full mt-8 md:mt-10 text-2xl xsm:text-3xl sm:text-5xl lg:text-7xl font-bold font-serif">Customer Reviews</div>
             </div>
-            <div className="relative mt-48 sm:mt-60 md:mt-96 px-2 md:px-3 lg:px-5">
-                <div ref={sliderRef} className="keen-slider mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl
+            <div ref={sliderRef} className="keen-slider mt-48 sm:mt-60 md:mt-72 xl:mt-96 mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl
 xxl:max-w-screen-xxl">
-                    {review.map((item, idx) => {
-                        return (
-                            <div className="keen-slider__slide flex justify-center items-center">
-                                <Test key={idx} item={item}></Test>
-                            </div>
-                        );
-                    })}
-                </div>
+                {review.map((item, idx) => {
+                    return (
+                        <div key={idx} className="keen-slider__slide flex justify-center items-center">
+                            <Review item={item}></Review>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );

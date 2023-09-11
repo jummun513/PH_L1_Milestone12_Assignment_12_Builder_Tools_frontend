@@ -10,7 +10,9 @@ module.exports = {
         topOffer1:
           "url('/src/assets/images/offer/ads-1.png')",
         topOffer2:
-          "url('/src/assets/images/offer/ads-2.png')"
+          "url('/src/assets/images/offer/ads-2.png')",
+        statBg:
+          "url('/src/assets/images/stat-bg.svg')",
       },
       colors: {
         'navBg': '#2F4858',
