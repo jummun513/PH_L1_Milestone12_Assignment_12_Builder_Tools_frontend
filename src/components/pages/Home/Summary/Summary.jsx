@@ -16,7 +16,7 @@ const Summary = () => {
                 <div className='relative rotate-180 z-10 mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl
         xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5 flex flex-col items-center'>
                     <h1 className='text-lg xsm:text-xl md:text-4xl lg:text-5xl xl:text-7xl font-sans text-gray-950 font-black'>Our Monthly Business Statistics</h1>
-                    <div className="grid xl:grid-cols-2 gap-y-4 xsm:gap-y-5 md:gap-y-10 justify-center items-center xl:shadow-lg mt-16 md:mt-32 xl:bg-white">
+                    <div className="grid xl:grid-cols-2 gap-y-4 xsm:gap-y-5 md:gap-y-10 justify-center items-center mt-16 md:mt-32">
                         <div
                             data-aos="fade-left"
                             data-aos-delay="0"

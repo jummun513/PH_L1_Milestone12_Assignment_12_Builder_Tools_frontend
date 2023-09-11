@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import img from "../../../../assets/images/banner.jpg";
-import './FeatureProduct.css';
+import './FeatureTools.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useQuery } from "react-query";
 import fetchData from "../../../../hooks/fetchData";
@@ -8,7 +8,7 @@ import Loading from '../../../shared/Loading/Loading';
 import ToolsCard from "../../../shared/ToolsCard/ToolsCard";
 import { Link } from "react-router-dom";
 
-const FeatureProducts = () => {
+const FeatureTools = () => {
     const { data, isLoading, error } = useQuery("toolsData", () => fetchData('http://localhost:8080/tools'));
 
     if (isLoading) {
@@ -32,7 +32,7 @@ const FeatureProducts = () => {
                 <div className="h-full w-full absolute backdrop-blur-sm top-0"></div>
                 <div className="relative z-10 w-full h-full flex flex-col py-4 md:py-14 justify-between items-center text-white">
                     <div className="text-center">
-                        <h1 className="text-3xl md:text-4xl lg:text-6xl font-black font-sans">Featured Products</h1>
+                        <h1 className="text-3xl md:text-4xl lg:text-6xl font-black font-sans">Featured Tools</h1>
                         <p className="text-slate-600 font-semibold text-xs sm:text-sm lg:text-lg mt-3">You contribute over half of your life
                             operating. Let us help you find the right fit for you or your corporation.</p>
                     </div>
@@ -93,7 +93,7 @@ xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5">
     );
 };
 
-export default FeatureProducts;
+export default FeatureTools;
 
 
 const BackGround = styled.div`

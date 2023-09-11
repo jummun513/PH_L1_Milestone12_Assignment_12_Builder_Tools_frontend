@@ -11,7 +11,7 @@ const ToolsCard = (data) => {
 
 
     return (
-        <div className="flex w-[320px] flex-col rounded-xl bg-[#fefefe] bg-clip-border text-gray-700 shadow-md">
+        <div className="relative flex w-[320px] lg:hover:bottom-1 flex-col rounded-xl bg-[#fefefe] bg-clip-border text-gray-700 shadow-md">
             <div className="mx-3 w-[300px] p-2 overflow-hidden mt-4 rounded-xl bg-[#f3f3f3] bg-clip-border text-gray-700">
                 <img
                     src={img}

@@ -2,7 +2,7 @@ import Banner from "./Banner/Banner";
 import BigOffer from "./BigOffer/BigOffer";
 import Category from "./Category/Category";
 import TopOffer from "./TopOffer/TopOffer";
-import FeatureProducts from "./FeatureProducts/FeatureProducts";
+import FeatureTools from "./FeatureTools/FeatureTools";
 import Quote from "./Quote/Quote";
 import Reviews from "./Reviews/Reviews";
 import Summary from "./Summary/Summary";
@@ -13,7 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <TopOffer></TopOffer>
             <Category></Category>
-            <FeatureProducts></FeatureProducts>
+            <FeatureTools></FeatureTools>
             <Quote></Quote>
             <BigOffer></BigOffer>
             <Summary></Summary>
