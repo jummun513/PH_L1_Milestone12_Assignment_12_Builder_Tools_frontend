@@ -11,14 +11,14 @@ const Summary = () => {
 
     return (
         <div className=''>
-            <div className='relative bg-statBg bg-no-repeat bg-center bg-cover rotate-180 w-full h-[70rem] xsm:h-[80rem] sm:h-[110rem] md:h-[120rem] xl:h-[90rem] xxl:h-[110rem] flex flex-col justify-center items-center'>
+            <div className='relative bg-statBg bg-no-repeat bg-center bg-cover rotate-180 w-full h-[70rem] xsm:h-[80rem] sm:h-[110rem] md:h-[120rem] xl:h-[90rem] xxl:h-[100rem] flex flex-col justify-center items-center'>
                 <div className='bg-white opacity-[0.7] w-full h-full absolute top-0 blur-sm'></div>
                 <div className='relative rotate-180 z-10 mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl
         xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5 flex flex-col items-center'>
                     <h1 className='text-lg xsm:text-xl md:text-4xl lg:text-5xl xl:text-7xl font-sans text-gray-950 font-black'>Our Monthly Business Statistics</h1>
                     <div className="grid xl:grid-cols-2 gap-y-4 xsm:gap-y-5 md:gap-y-10 justify-center items-center mt-16 md:mt-32">
                         <div
-                            data-aos="fade-left"
+                            data-aos="zoom-in-up"
                             data-aos-delay="0"
                             data-aos-duration="1000"
                             data-aos-easing="ease-in-out"
@@ -33,7 +33,7 @@ const Summary = () => {
                             </div>
                         </div>
                         <div
-                            data-aos="fade-right"
+                            data-aos="zoom-in-up"
                             data-aos-delay="100"
                             data-aos-duration="1000"
                             data-aos-easing="ease-in-out"
@@ -48,7 +48,7 @@ const Summary = () => {
                             </div>
                         </div>
                         <div
-                            data-aos="fade-left"
+                            data-aos="zoom-in-down"
                             data-aos-delay="200"
                             data-aos-duration="1000"
                             data-aos-easing="ease-in-out"
@@ -63,7 +63,7 @@ const Summary = () => {
                             </div>
                         </div>
                         <div
-                            data-aos="fade-right"
+                            data-aos="zoom-in-down"
                             data-aos-delay="300"
                             data-aos-duration="1000"
                             data-aos-easing="ease-in-out"

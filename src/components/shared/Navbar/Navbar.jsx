@@ -89,27 +89,27 @@ const Navbar = () => {
 
                                         {
                                             openUserDashboard && <div className="absolute right-0 z-10 mt-4 lg:mt-5 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                                <div className="flex items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
+                                                <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <AiOutlineUser className="me-2 h-5 w-5"></AiOutlineUser>
                                                     <a href="#" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Your Profile</a>
                                                 </div>
-                                                <div className="flex items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
+                                                <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <MdDashboardCustomize className="me-2 h-5 w-5"></MdDashboardCustomize>
                                                     <a href="#" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Dashboard</a>
                                                 </div>
-                                                <div className="flex items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
+                                                <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <BsFillBookmarkPlusFill className="me-2 h-5 w-5"></BsFillBookmarkPlusFill>
                                                     <a href="#" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Wishlist</a>
                                                 </div>
-                                                <div className="flex items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
+                                                <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <MdAdminPanelSettings className="me-2 h-5 w-5"></MdAdminPanelSettings>
                                                     <a href="#" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Admin Panel</a>
                                                 </div>
-                                                <div className="mt-3 bg-gray-100 flex items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
+                                                <div className="mt-3 hover:cursor-pointer bg-gray-100 flex items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <FaSignOutAlt className="me-2 h-5 w-5"></FaSignOutAlt>
                                                     <a href="#" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Sign out</a>
