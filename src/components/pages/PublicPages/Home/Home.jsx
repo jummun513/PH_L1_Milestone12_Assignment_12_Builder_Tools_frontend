@@ -1,11 +1,11 @@
-import Banner from "./Banner/Banner";
-import BigOffer from "./BigOffer/BigOffer";
-import Category from "./Category/Category";
-import TopOffer from "./TopOffer/TopOffer";
-import FeatureTools from "./FeatureTools/FeatureTools";
-import Quote from "./Quote/Quote";
-import Reviews from "./Reviews/Reviews";
-import Summary from "./Summary/Summary";
+import Banner from './Banner/Banner';
+import TopOffer from './TopOffer/TopOffer';
+import Category from './Category/Category';
+import FeatureTools from './FeatureTools/FeatureTools';
+import Quote from './Quote/Quote';
+import BigOffer from './BigOffer/BigOffer';
+import Summary from './Summary/Summary';
+import Reviews from './Reviews/Reviews';
 
 const Home = () => {
     return (

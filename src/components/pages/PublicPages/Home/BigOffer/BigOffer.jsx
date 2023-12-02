@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import p_img from '../../../../assets/images/offer/product-1.png';
+import p_img from '../../../../../assets/images/offer/product-1.png';
 import Countdown from 'react-countdown';
 import { useEffect } from 'react';
 import AOS from 'aos';

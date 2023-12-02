@@ -1,11 +1,11 @@
 import { styled } from "styled-components";
-import img from "../../../../assets/images/banner.jpg";
+import img from "../../../../../assets/images/banner.jpg";
 import './FeatureTools.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useQuery } from "react-query";
-import fetchData from "../../../../hooks/fetchData";
-import Loading from '../../../shared/Loading/Loading';
-import ToolsCard from "../../../shared/ToolsCard/ToolsCard";
+import fetchData from "../../../../../functions/fetchData";
+import Loading from '../../../../shared/Loading/Loading';
+import ToolsCard from "../../../../shared/ToolsCard/ToolsCard";
 import { Link } from "react-router-dom";
 
 const FeatureTools = () => {

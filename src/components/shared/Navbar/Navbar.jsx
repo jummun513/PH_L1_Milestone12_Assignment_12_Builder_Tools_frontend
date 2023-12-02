@@ -6,22 +6,33 @@ import { AiOutlineUser, AiFillCaretDown } from 'react-icons/ai';
 import { BsFillBookmarkPlusFill } from 'react-icons/bs';
 import { MdDashboardCustomize, MdAdminPanelSettings } from 'react-icons/md';
 import './Navbar.css';
-// import navLogoLazy from '../../../assets/images/logo-lazy.png';
+import { useAuth } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
     const [openNavbar, setOpenNavbar] = useState(false);
     const [openUserDashboard, setOpenUserDashboard] = useState(false);
     // const [openSubmenu, setOpenSubmenu] = useState(false);
-
-
-    const user = true;
+    const { storedUser, logOut } = useAuth();
 
     const navItem = [
         { href: '/', name: 'Home' },
-        { href: '/blogs', name: 'Tools' },
-        { href: '/', name: 'Blogs' },
-        { href: '/', name: 'Blogs' },
+        { href: '/tools', name: 'Tools' },
+        { href: '/blogs', name: 'Blogs' },
+        { href: '/about', name: 'About' },
     ]
+
+    const handleSignOut = () => {
+        logOut().catch(err => console.log(err));
+    }
+
+    // user avatar control
+    let avatarUrl = '';
+    if (storedUser) {
+        if (storedUser?.imageUrl !== '') {
+            const temp = storedUser.imageUrl.split('https://ik.imagekit.io/kkfhvwmzt/')
+            avatarUrl = `https://ik.imagekit.io/kkfhvwmzt/tr:w-80/${temp[1]}`
+        }
+    }
 
     return (
         <div>
@@ -72,7 +83,7 @@ const Navbar = () => {
                                 </svg>
                             </button>
                             {
-                                user ?
+                                storedUser ?
                                     <div className="relative ml-3 md:ml-5">
                                         <div>
                                             <button onClick={() => { setOpenNavbar(false); setOpenUserDashboard(!openUserDashboard) }} type="button"
@@ -81,14 +92,16 @@ const Navbar = () => {
                                                 <span className="absolute -inset-1.5"></span>
                                                 <span className="sr-only">Open user menu</span>
                                                 <img className="h-8 w-8 lg:h-10 lg:w-10 xl:h-12 xl:w-12 rounded-full"
-                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                    src={avatarUrl !== '' ? avatarUrl : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"}
                                                     alt="" />
                                                 <AiFillCaretDown className={`h-3 w-3 md:h-4 md:w-4 lg:w-5 lg:h-5 mx-1 ${openUserDashboard ? 'rotate-180 duration-150 ease-linear' : 'rotate-0 duration-150 ease-linear'}`}></AiFillCaretDown>
                                             </button>
                                         </div>
-
                                         {
                                             openUserDashboard && <div className="absolute right-0 z-10 mt-4 lg:mt-5 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                <div>
+                                                    <p className="text-gray-950 mx-2 break-words">{storedUser.email}</p>
+                                                </div>
                                                 <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <AiOutlineUser className="me-2 h-5 w-5"></AiOutlineUser>
                                                     <a href="#" role="menuitem" tabIndex="-1"
@@ -109,7 +122,7 @@ const Navbar = () => {
                                                     <a href="#" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Admin Panel</a>
                                                 </div>
-                                                <div className="mt-3 hover:cursor-pointer bg-gray-100 flex items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
+                                                <div onClick={handleSignOut} className="mt-3 hover:cursor-pointer bg-gray-100 flex items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <FaSignOutAlt className="me-2 h-5 w-5"></FaSignOutAlt>
                                                     <a href="#" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Sign out</a>

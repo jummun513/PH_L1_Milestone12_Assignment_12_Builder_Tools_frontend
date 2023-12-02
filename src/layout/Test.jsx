@@ -1,4 +1,5 @@
-const Loading = () => {
+
+const Test = () => {
     return (
         <div className="flex justify-center items-center h-[100vh]">
             <div className="text-center">
@@ -14,4 +15,4 @@ const Loading = () => {
     );
 };
 
-export default Loading;
+export default Test;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import img from '../../../../assets/images/quote_background.jpg';
-import img1 from '../../../../assets/images/quote-foreground.png';
+import img from '../../../../../assets/images/quote_background.jpg';
+import img1 from '../../../../../assets/images/quote-foreground.png';
 
 const Quote = () => {
     return (

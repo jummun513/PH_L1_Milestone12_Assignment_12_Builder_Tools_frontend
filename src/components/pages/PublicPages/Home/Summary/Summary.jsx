@@ -1,6 +1,6 @@
-import img1 from '../../../../assets/images/user.png'
-import img from '../../../../assets/images/tools.png'
-import img2 from '../../../../assets/images/like.png'
+import img1 from '../../../../../assets/images/user.png'
+import img from '../../../../../assets/images/tools.png'
+import img2 from '../../../../../assets/images/like.png'
 import Aos from 'aos';
 import { useEffect } from 'react';
 
