@@ -32,7 +32,7 @@ const ToolsCard = (data) => {
                     <p className="block font-sans text-sm leading-normal text-gray-900 font-normal antialiased opacity-75">
                         Available stock: {quantity}<span className='font-normal'>pc.</span>
                     </p><p className="block font-sans text-sm leading-normal text-gray-900 font-normal antialiased opacity-75">
-                        Minimum order: {minOrder}<span className='font-normal'>pc.</span>
+                        Minimum order: {minOrder}<span className='font-normal'></span>
                     </p>
                 </div>
                 <p className="block font-sans text-sm leading-normal text-gray-900 font-bold antialiased opacity-75">

@@ -25,15 +25,6 @@ const Navbar = () => {
         logOut().catch(err => console.log(err));
     }
 
-    // user avatar control
-    let avatarUrl = '';
-    if (storedUser) {
-        if (storedUser?.imageUrl !== '') {
-            const temp = storedUser.imageUrl.split('https://ik.imagekit.io/kkfhvwmzt/')
-            avatarUrl = `https://ik.imagekit.io/kkfhvwmzt/tr:w-80/${temp[1]}`
-        }
-    }
-
     return (
         <div>
             <nav className="bg-white">
@@ -92,7 +83,7 @@ const Navbar = () => {
                                                 <span className="absolute -inset-1.5"></span>
                                                 <span className="sr-only">Open user menu</span>
                                                 <img className="h-8 w-8 lg:h-10 lg:w-10 xl:h-12 xl:w-12 rounded-full"
-                                                    src={avatarUrl !== '' ? avatarUrl : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"}
+                                                    src={storedUser.imageUrl ? storedUser.imageUrl : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"}
                                                     alt="" />
                                                 <AiFillCaretDown className={`h-3 w-3 md:h-4 md:w-4 lg:w-5 lg:h-5 mx-1 ${openUserDashboard ? 'rotate-180 duration-150 ease-linear' : 'rotate-0 duration-150 ease-linear'}`}></AiFillCaretDown>
                                             </button>

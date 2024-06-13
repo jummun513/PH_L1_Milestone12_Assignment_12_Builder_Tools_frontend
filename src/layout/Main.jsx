@@ -8,7 +8,6 @@ import { AuthProvider } from '../providers/AuthProvider';
 const Main = () => {
     const queryClient = new QueryClient();
     const location = useLocation();
-    // console.log(location);
 
     return (
         <QueryClientProvider client={queryClient}>

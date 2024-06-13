@@ -1,11 +1,11 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import 'firebase/auth';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { app } from '../firebase/firebase.config';
 import axios from 'axios';
 import { useQueryClient } from 'react-query';
 
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
 // Create a context to manage authentication state
 const AuthContext = createContext();
@@ -30,7 +30,27 @@ export const AuthProvider = (data) => {
     useEffect(() => {
         // Set up an observer to listen for changes in authentication state
         const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-            if (currentUser) {
+
+            if (currentUser?.providerData?.[0]?.providerId === 'google.com') {
+                setUser(currentUser);
+                try {
+                    await axios.post(`${import.meta.env.VITE_clientSideLink}/users`, { email: currentUser?.email.trim().toLowerCase(), fullName: currentUser?.displayName, imageUrl: currentUser?.photoURL, gender: "" });
+
+                    const response = await axios.post(`${import.meta.env.VITE_clientSideLink}/jwt`, {
+                        email: currentUser?.email,
+                    });
+                    const token = response.data.data;
+
+                    // Store the JWT token in localStorage
+                    localStorage.setItem('access_token', token);
+
+                    // Use React Query to fetch user information from the backend
+                    queryClient.setQueryData(['user', currentUser.email], getUser(currentUser.email, token)).then(d => setStoredUser(d));
+                } catch (error) {
+                    console.error(error.message);
+                }
+            }
+            else if (currentUser) {
                 setUser(currentUser);
 
                 // Get JWT token from your backend API
@@ -74,6 +94,11 @@ export const AuthProvider = (data) => {
         return await signOut(auth);
     };
 
+    // Function to google signIn
+    const googleSignIn = async () => {
+        return await signInWithPopup(auth, provider);
+    };
+
     // Expose the authentication functions and user state to the components
     const authInfo = {
         user,
@@ -84,6 +109,7 @@ export const AuthProvider = (data) => {
         setLoading,
         logOut,
         storedUser,
+        googleSignIn
     };
 
     return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
