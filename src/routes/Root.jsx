@@ -5,8 +5,9 @@ import Blogs from '../components/pages/PublicPages/Blogs/Blogs';
 import Login from '../components/pages/PublicPages/Login/Login';
 import Register from '../components/pages/PublicPages/Register/Register';
 import NotFound from "../components/shared/NotFound/NotFound";
-import AdminPages from "../components/pages/AdminPages/AdminPages";
 import Test from "../layout/Test";
+import AdminDashboardLayout from "../layout/AdminDashboardLayout";
+import AdminDashboard from "../components/pages/ProtectedPages/AdminDashboardPages/AdminDashboard/AdminDashboard";
 
 export const router = createBrowserRouter([
     {
@@ -33,23 +34,25 @@ export const router = createBrowserRouter([
                 path: '/registration',
                 element: <Register></Register>,
             },
-            {
-                path: '/admin-panel',
-                element: <AdminPages></AdminPages>,
-            },
         ]
     },
-    // {
-    //     path: '/loading',
-    //     element: <Loading></Loading>,
-    // },
+    {
+        path: "/admin",
+        element: <AdminDashboardLayout></AdminDashboardLayout>,
+        children: [
+            {
+                path: 'dashboard',
+                element: <AdminDashboard></AdminDashboard>,
+            }
+        ]
+    },
 
     {
-        path: '/test',
+        path: "/test",
         element: <Test></Test>,
     },
     {
-        path: '*',
+        path: "*",
         element: <NotFound></NotFound>
     }
 ]);

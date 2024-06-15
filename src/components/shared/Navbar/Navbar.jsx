@@ -11,7 +11,6 @@ import { useAuth } from "../../../providers/AuthProvider";
 const Navbar = () => {
     const [openNavbar, setOpenNavbar] = useState(false);
     const [openUserDashboard, setOpenUserDashboard] = useState(false);
-    // const [openSubmenu, setOpenSubmenu] = useState(false);
     const { storedUser, logOut } = useAuth();
 
     const navItem = [
@@ -84,7 +83,7 @@ const Navbar = () => {
                                                 <span className="sr-only">Open user menu</span>
                                                 <img className="h-8 w-8 lg:h-10 lg:w-10 xl:h-12 xl:w-12 rounded-full"
                                                     src={storedUser.imageUrl ? storedUser.imageUrl : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"}
-                                                    alt="" />
+                                                    alt="User Image" />
                                                 <AiFillCaretDown className={`h-3 w-3 md:h-4 md:w-4 lg:w-5 lg:h-5 mx-1 ${openUserDashboard ? 'rotate-180 duration-150 ease-linear' : 'rotate-0 duration-150 ease-linear'}`}></AiFillCaretDown>
                                             </button>
                                         </div>
@@ -110,7 +109,7 @@ const Navbar = () => {
                                                 </div>
                                                 <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <MdAdminPanelSettings className="me-2 h-5 w-5"></MdAdminPanelSettings>
-                                                    <a href="#" role="menuitem" tabIndex="-1"
+                                                    <a href="/admin/dashboard" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Admin Panel</a>
                                                 </div>
                                                 <div onClick={handleSignOut} className="mt-3 hover:cursor-pointer bg-gray-100 flex items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
