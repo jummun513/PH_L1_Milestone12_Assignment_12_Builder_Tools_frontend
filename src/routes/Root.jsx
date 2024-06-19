@@ -8,6 +8,9 @@ import NotFound from "../components/shared/NotFound/NotFound";
 import Test from "../layout/Test";
 import AdminDashboardLayout from "../layout/AdminDashboardLayout";
 import AdminDashboard from "../components/pages/ProtectedPages/AdminDashboardPages/AdminDashboard/AdminDashboard";
+import AdminAddTool from "../components/pages/ProtectedPages/AdminDashboardPages/AdminAddTool/AdminAddTool";
+import AdminManageTools from "../components/pages/ProtectedPages/AdminDashboardPages/AdminManageTools/AdminManageTools";
+import AdminManageUsers from "../components/pages/ProtectedPages/AdminDashboardPages/AdminManageUsers/AdminManageUsers";
 
 export const router = createBrowserRouter([
     {
@@ -43,6 +46,18 @@ export const router = createBrowserRouter([
             {
                 path: 'dashboard',
                 element: <AdminDashboard></AdminDashboard>,
+            },
+            {
+                path: 'add-new-tool',
+                element: <AdminAddTool></AdminAddTool>,
+            },
+            {
+                path: 'manage-tools',
+                element: <AdminManageTools></AdminManageTools>,
+            },
+            {
+                path: 'manage-users',
+                element: <AdminManageUsers></AdminManageUsers>,
             }
         ]
     },

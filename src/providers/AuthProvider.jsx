@@ -11,7 +11,7 @@ const provider = new GoogleAuthProvider();
 const AuthContext = createContext();
 
 const getUser = async (email, token) => {
-    const response = await axios.get(`${import.meta.env.VITE_clientSideLink}/users/${email}`, {
+    const response = await axios.get(`${import.meta.env.VITE_serverSideLink}/users/${email}`, {
         headers: {
             Authorization: `Bearer ${token}`,
         },
@@ -34,9 +34,9 @@ export const AuthProvider = (data) => {
             if (currentUser?.providerData?.[0]?.providerId === 'google.com') {
                 setUser(currentUser);
                 try {
-                    await axios.post(`${import.meta.env.VITE_clientSideLink}/users`, { email: currentUser?.email.trim().toLowerCase(), fullName: currentUser?.displayName, imageUrl: currentUser?.photoURL, gender: "" });
+                    await axios.post(`${import.meta.env.VITE_serverSideLink}/users`, { email: currentUser?.email.trim().toLowerCase(), fullName: currentUser?.displayName, imageUrl: currentUser?.photoURL, gender: "" });
 
-                    const response = await axios.post(`${import.meta.env.VITE_clientSideLink}/jwt`, {
+                    const response = await axios.post(`${import.meta.env.VITE_serverSideLink}/jwt`, {
                         email: currentUser?.email,
                     });
                     const token = response.data.data;
@@ -55,7 +55,7 @@ export const AuthProvider = (data) => {
 
                 // Get JWT token from your backend API
                 try {
-                    const response = await axios.post(`${import.meta.env.VITE_clientSideLink}/jwt`, {
+                    const response = await axios.post(`${import.meta.env.VITE_serverSideLink}/jwt`, {
                         email: currentUser?.email,
                     });
                     const token = response.data.data;

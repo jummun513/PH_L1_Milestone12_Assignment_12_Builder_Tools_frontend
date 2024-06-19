@@ -2,20 +2,19 @@ import { styled } from "styled-components";
 import img from "../../../../../assets/images/banner.jpg";
 import './FeatureTools.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { useQuery } from "react-query";
-import fetchData from "../../../../../functions/fetchData";
 import Loading from '../../../../shared/Loading/Loading';
 import ToolsCard from "../../../../shared/ToolsCard/ToolsCard";
 import { Link } from "react-router-dom";
+import { useGetAllTools } from "../../../../../utilities/hooks/tools.hook";
 
 const FeatureTools = () => {
-    const { data, isLoading, error } = useQuery("toolsData", () => fetchData('http://localhost:8080/tools'));
+    const { data, isError, isLoading, error } = useGetAllTools();
 
     if (isLoading) {
         return <div className="h-[80vh] flex justify-center items-center"><Loading></Loading></div>;
     }
 
-    if (error) {
+    if (error && isError) {
         return <div>Error: {error.message}</div>;
     }
 

@@ -14,7 +14,7 @@ const AdminLargeSidebar = () => {
                     </Link>
                 </div>
                 <ul id='admin_panel_sidebar' className="menu mt-7 h-fit">
-                    <li><NavLink to='dashboard' className={({ isActive }) => isActive ? "bg-primary hover:bg-primary text-gray-950 hover:text-gray-950" : "text-gray-950 hover:bg-primary hover:text-gray-950"}><FaUsers></FaUsers>Dashboard</NavLink></li>
+                    <li><NavLink to='dashboard' className={({ isActive }) => isActive ? "bg-primary hover:bg-primary text-gray-950 hover:text-gray-950" : "bg-gray-300 text-gray-950 hover:bg-primary hover:text-gray-950"}><FaUsers></FaUsers>Dashboard</NavLink></li>
                     <li className='mt-3'>
                         <details>
                             <summary className='bg-gray-300 text-gray-950 hover:bg-primary hover:text-gray-950'>

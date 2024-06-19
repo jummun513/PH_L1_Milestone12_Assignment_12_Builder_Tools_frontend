@@ -32,7 +32,7 @@ const Register = () => {
 
         createNewUser(email, confirmPassword).then(async () => {
             try {
-                await axios.post(`${import.meta.env.VITE_clientSideLink}/users`, { email: register_email.trim().toLowerCase(), ...rest });
+                await axios.post(`${import.meta.env.VITE_serverSideLink}/users`, { email: register_email.trim().toLowerCase(), ...rest });
                 setIsLoading(false);
                 reset();
                 Swal.fire({
