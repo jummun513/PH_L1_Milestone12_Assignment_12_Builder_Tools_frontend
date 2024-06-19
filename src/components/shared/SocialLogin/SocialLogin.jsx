@@ -1,8 +1,8 @@
 import { BsFacebook, BsApple } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
-import { useAuth } from '../../../../providers/AuthProvider';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../providers/AuthProvider';
 
 const SocialLogin = () => {
     const [isLoading, setIsLoading] = useState(false);

@@ -22,7 +22,7 @@ const AdminManageUsers = () => {
           <form>
             <div className="flex">
               <div className="relative w-full">
-                <input type="search" id="search" className="block p-1.5 xxs:p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border border-gray-300 focus:ring-primary focus:border-primary outline-none" placeholder="Search by email or name" required />
+                <input type="search" id="search" className="block p-1.5 xxs:p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border border-gray-300 focus:ring-primary focus:border-primary outline-none" placeholder="Search by email or role" required />
                 <button disabled type="submit" className="absolute top-0 right-0 h-full p-1.5 xxs:p-2.5 text-sm font-medium text-white bg-primary rounded-r-lg border border-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary">
                   <svg className="w-4 h-4 text-gray-950" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
@@ -62,8 +62,8 @@ const AdminManageUsers = () => {
                         {d?.role}
                       </td>
                       <td className="px-3 sm:px-6 lg:px-4 xl:px-6 py-3 text-center">
-                        <button className="btn btn-xs xl:btn-sm text-gray-50 bg-green-600 border-none hover:bg-green-500 me-2">Make Admin</button>
-                        <button className="btn btn-xs xl:btn-sm text-gray-50 bg-red-600 border-none hover:bg-red-500">Delete</button>
+                        <button disabled={d.role.match('admin')} className="btn btn-xs xl:btn-sm text-gray-50 bg-green-600 border-none hover:bg-green-500 me-2">Make Admin</button>
+                        <button disabled={d.role === 'super-admin'} className="btn btn-xs xl:btn-sm text-gray-50 bg-red-600 border-none hover:bg-red-500">Delete</button>
                       </td>
                     </tr>
                   )

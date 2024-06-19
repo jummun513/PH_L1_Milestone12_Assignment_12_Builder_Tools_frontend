@@ -1,10 +1,10 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../../../assets/images/logo.jpg';
-import SocialLogin from '../SocialLogin/SocialLogin';
 import { useRef, useState } from 'react';
 import { BiShow, BiHide } from 'react-icons/bi';
 import url from '../../../../assets/images/loginBg.svg'
 import { useAuth } from '../../../../providers/AuthProvider';
+import SocialLogin from '../../../shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const email = useRef(null);

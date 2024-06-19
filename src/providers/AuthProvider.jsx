@@ -32,6 +32,7 @@ export const AuthProvider = (data) => {
         const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
 
             if (currentUser?.providerData?.[0]?.providerId === 'google.com') {
+                setLoading(true);
                 setUser(currentUser);
                 try {
                     await axios.post(`${import.meta.env.VITE_serverSideLink}/users`, { email: currentUser?.email.trim().toLowerCase(), fullName: currentUser?.displayName, imageUrl: currentUser?.photoURL, gender: "" });
@@ -49,10 +50,11 @@ export const AuthProvider = (data) => {
                 } catch (error) {
                     console.error(error.message);
                 }
+                setLoading(false);
             }
             else if (currentUser) {
                 setUser(currentUser);
-
+                setLoading(true);
                 // Get JWT token from your backend API
                 try {
                     const response = await axios.post(`${import.meta.env.VITE_serverSideLink}/jwt`, {
@@ -68,13 +70,14 @@ export const AuthProvider = (data) => {
                 } catch (error) {
                     console.error(error.message);
                 }
+                setLoading(false);
             } else {
                 setUser(null);
                 setStoredUser(null);
                 localStorage.removeItem('access_token');
+                setLoading(false);
             }
         })
-        setLoading(false);
 
         return () => unsubscribe();
     }, [queryClient]);

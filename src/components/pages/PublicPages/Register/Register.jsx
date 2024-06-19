@@ -1,6 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../../../assets/images/logo.jpg';
-import SocialLogin from '../SocialLogin/SocialLogin';
 import { useRef, useState } from 'react';
 import { BiShow, BiHide } from 'react-icons/bi';
 import url from '../../../../assets/images/registerBg.svg';
@@ -9,6 +8,7 @@ import './Register.css';
 import { useAuth } from '../../../../providers/AuthProvider';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../../shared/SocialLogin/SocialLogin';
 
 const Register = () => {
     const password = useRef(null);

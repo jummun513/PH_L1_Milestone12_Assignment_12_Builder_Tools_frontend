@@ -1,10 +1,15 @@
 import { FaProductHunt, FaUsers } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../providers/AuthProvider";
 import navLogo from '../../../assets/images/logo.png';
 
 const AdminLargeSidebar = () => {
-    const { storedUser } = useAuth();
+    const { storedUser, logOut } = useAuth();
+    const navigate = useNavigate();
+    const handleSignOut = () => {
+        logOut().catch(err => console.log(err));
+        navigate('/login');
+    }
     return (
         <div className="hidden xl:block w-80 bg-zinc-100 shadow-2xl relative h-[100vh] overflow-auto">
             <div className='p-2 xl:p-3 w-full'>
@@ -29,7 +34,7 @@ const AdminLargeSidebar = () => {
                     <li className='mt-3'><NavLink to='manage-users' className={({ isActive }) => isActive ? "bg-primary hover:bg-primary text-gray-950 hover:text-gray-950" : "bg-gray-300 text-gray-950 hover:bg-primary hover:text-gray-950"}><FaUsers></FaUsers>Manage Users</NavLink></li>
                 </ul>
             </div>
-            <div className='mx-3 mb-1 mt-5'>
+            <div className='mx-3 mb-1 mt-5' onClick={() => handleSignOut()}>
                 <a className='bg-[#00000090] flex items-center px-2 py-2 rounded-md cursor-pointer hover:bg-[#00000080] duration-150 ease-linear text-gray-50'>
                     <img src={storedUser ? storedUser.imageUrl : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"} alt='User Image' loading='lazy' className='w-8 xs:w-10 lg:w-12 border p-1 rounded-full me-1 sm:me-2 lg:me-3' /> Sign Out
                 </a>

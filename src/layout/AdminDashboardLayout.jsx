@@ -8,6 +8,7 @@ import { useAuth } from "../providers/AuthProvider";
 const AdminDashboardLayout = () => {
     const { storedUser } = useAuth();
     const [drawerOpen, setDrawerOpen] = useState(false);
+
     return (
         <>
             <div className="bg-[#fbfbfb] h-[100vh] overflow-auto relative flex w-full mx-auto max-w-[1600px]">

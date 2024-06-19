@@ -8,17 +8,17 @@ import { MdDashboardCustomize, MdAdminPanelSettings } from 'react-icons/md';
 import './Navbar.css';
 import { useAuth } from "../../../providers/AuthProvider";
 
+const navItem = [
+    { href: '/', name: 'Home' },
+    { href: '/tools', name: 'Tools' },
+    { href: '/blogs', name: 'Blogs' },
+    { href: '/about', name: 'About' },
+]
+
 const Navbar = () => {
     const [openNavbar, setOpenNavbar] = useState(false);
     const [openUserDashboard, setOpenUserDashboard] = useState(false);
     const { storedUser, logOut } = useAuth();
-
-    const navItem = [
-        { href: '/', name: 'Home' },
-        { href: '/tools', name: 'Tools' },
-        { href: '/blogs', name: 'Blogs' },
-        { href: '/about', name: 'About' },
-    ]
 
     const handleSignOut = () => {
         logOut().catch(err => console.log(err));
@@ -97,21 +97,21 @@ const Navbar = () => {
                                                     <a href="#" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Your Profile</a>
                                                 </div>
-                                                <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
+                                                {(storedUser?.role === 'user') && <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <MdDashboardCustomize className="me-2 h-5 w-5"></MdDashboardCustomize>
                                                     <a href="#" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Dashboard</a>
-                                                </div>
-                                                <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
+                                                </div>}
+                                                {(storedUser?.role === 'user') && <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <BsFillBookmarkPlusFill className="me-2 h-5 w-5"></BsFillBookmarkPlusFill>
                                                     <a href="#" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Wishlist</a>
-                                                </div>
-                                                <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
+                                                </div>}
+                                                {(storedUser?.role === 'admin' || storedUser?.role === 'super-admin') && <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <MdAdminPanelSettings className="me-2 h-5 w-5"></MdAdminPanelSettings>
                                                     <a href="/admin/dashboard" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Admin Panel</a>
-                                                </div>
+                                                </div>}
                                                 <div onClick={handleSignOut} className="mt-3 hover:cursor-pointer bg-gray-100 flex items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <FaSignOutAlt className="me-2 h-5 w-5"></FaSignOutAlt>
                                                     <a href="#" role="menuitem" tabIndex="-1"
