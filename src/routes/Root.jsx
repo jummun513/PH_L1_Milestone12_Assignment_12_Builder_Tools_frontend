@@ -14,6 +14,14 @@ import AdminAddTool from "../components/pages/ProtectedPages/AdminDashboardPages
 import AdminManageTools from "../components/pages/ProtectedPages/AdminDashboardPages/AdminManageTools/AdminManageTools";
 import AdminManageUsers from "../components/pages/ProtectedPages/AdminDashboardPages/AdminManageUsers/AdminManageUsers";
 import PrivateAdminRoutes from "./authGuard/PrivateAdminRoutes";
+import UserDashboardLayout from "../layout/UserDashboardLayout";
+import UserDashboard from "../components/pages/ProtectedPages/UserDashboardPages/UserDashboard/UserDashboard";
+import UserProfile from "../components/pages/ProtectedPages/UserDashboardPages/UserProfile/UserProfile";
+import UserWishList from "../components/pages/ProtectedPages/UserDashboardPages/UserWishList/UserWishList";
+import PrivateUserRoutes from "./authGuard/PrivateUserRoutes";
+import PrivateSuperAdminRoutes from "./authGuard/PrivateSuperAdminRoutes";
+import PrivateRoutes from "./authGuard/PrivateRoutes";
+import AddReview from "../components/pages/ProtectedPages/UserDashboardPages/AddReview/AddReview";
 
 export const router = createBrowserRouter([
     {
@@ -69,11 +77,33 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'manage-users',
-                element: <AdminManageUsers></AdminManageUsers>,
+                element: <PrivateSuperAdminRoutes><AdminManageUsers></AdminManageUsers></PrivateSuperAdminRoutes>,
             }
         ]
     },
-
+    {
+        path: "/user",
+        element: <PrivateRoutes><UserDashboardLayout /></PrivateRoutes>,
+        children: [
+            { index: true, element: <Navigate to="dashboard"></Navigate> },
+            {
+                path: 'dashboard',
+                element: <PrivateUserRoutes><UserDashboard /></PrivateUserRoutes>,
+            },
+            {
+                path: 'add-review',
+                element: <PrivateUserRoutes><AddReview /></PrivateUserRoutes>,
+            },
+            {
+                path: 'my-profile',
+                element: <UserProfile></UserProfile>,
+            },
+            {
+                path: 'wishlist',
+                element: <PrivateUserRoutes><UserWishList /></PrivateUserRoutes>,
+            }
+        ]
+    },
     {
         path: "/test",
         element: <Test></Test>,

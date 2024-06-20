@@ -1,6 +1,6 @@
 import { useState } from "react";
 import navLogo from '../../../assets/images/logo.png';
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaSignOutAlt } from 'react-icons/fa';
 import { AiOutlineUser, AiFillCaretDown } from 'react-icons/ai';
 import { BsFillBookmarkPlusFill } from 'react-icons/bs';
@@ -19,9 +19,11 @@ const Navbar = () => {
     const [openNavbar, setOpenNavbar] = useState(false);
     const [openUserDashboard, setOpenUserDashboard] = useState(false);
     const { storedUser, logOut } = useAuth();
+    const navigate = useNavigate();
 
     const handleSignOut = () => {
         logOut().catch(err => console.log(err));
+        navigate('/');
     }
 
     return (
@@ -94,17 +96,17 @@ const Navbar = () => {
                                                 </div>
                                                 <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <AiOutlineUser className="me-2 h-5 w-5"></AiOutlineUser>
-                                                    <a href="#" role="menuitem" tabIndex="-1"
+                                                    <a href="/user/my-profile" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Your Profile</a>
                                                 </div>
                                                 {(storedUser?.role === 'user') && <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <MdDashboardCustomize className="me-2 h-5 w-5"></MdDashboardCustomize>
-                                                    <a href="#" role="menuitem" tabIndex="-1"
+                                                    <a href="/user/dashboard" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Dashboard</a>
                                                 </div>}
                                                 {(storedUser?.role === 'user') && <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">
                                                     <BsFillBookmarkPlusFill className="me-2 h-5 w-5"></BsFillBookmarkPlusFill>
-                                                    <a href="#" role="menuitem" tabIndex="-1"
+                                                    <a href="/user/wishlist" role="menuitem" tabIndex="-1"
                                                         id="user-menu-item-2">Wishlist</a>
                                                 </div>}
                                                 {(storedUser?.role === 'admin' || storedUser?.role === 'super-admin') && <div className="flex hover:cursor-pointer items-center px-4 py-2 sm:py-3 text-sm lg:text-base text-gray-900 hover:text-primary duration-150 ease-linear">

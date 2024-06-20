@@ -1,22 +1,53 @@
-import { useGetAllUsers } from "../../../../../utilities/hooks/user.hook";
+import Swal from "sweetalert2";
+import { useDeleteSingleUser, useGetAllUsers, usePatchUser } from "../../../../../utilities/hooks/user.hook";
 import Loading from "../../../../shared/Loading/Loading";
 
 const AdminManageUsers = () => {
   const { data, isError, isLoading, error } = useGetAllUsers();
+  const { mutateAsync, isError: makeAdminIsError, error: makeAdminError } = usePatchUser();
+  const { mutateAsync: deleteUserAsyncFun, isError: deleteIsError, error: deleteError, isSuccess: deleteSuccess } = useDeleteSingleUser();
 
   if (isLoading) {
     return <div className="h-[80vh] flex justify-center items-center"><Loading></Loading></div>;
   }
 
-  if (error && isError) {
-    return <div>Error: {error.message}</div>;
+  if ((error && isError) || (makeAdminError && makeAdminIsError) || (deleteIsError && deleteError)) {
+    return <div>Error: {error?.message || makeAdminError?.message || deleteError?.message}</div>;
   }
+
+  const handleMakeAdminButton = async (id) => {
+    await mutateAsync({ id: id, data: { role: 'admin' } })
+  }
+
+  const handleRemoveAdminButton = async (id) => {
+    await mutateAsync({ id: id, data: { role: 'user' } })
+  }
+
+  const handleDeleteUserButton = (id) => {
+    Swal.fire({
+      title: "This user will be deleted from database!",
+      showCancelButton: true,
+      confirmButtonText: "Delete",
+      confirmButtonColor: "rgb(220 38 38)"
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await deleteUserAsyncFun(id);
+        if (deleteSuccess) {
+          Swal.fire("Successfully! deleted.", "", "success");
+        }
+        else {
+          Swal.fire("There was a problem!", "", "info");
+        }
+      }
+    });
+  }
+
   return (
     <div className="px-5 sm:px-10 py-7 xxs:pt-10 xxs:pb-14">
       <h2 className="text-center text-xl xs:text-3xl md:text-4xl font-bold text-gray-800 mb-5 xs:mb-10 md:mb-14">Manage All Users</h2>
       <div className="w-full flex justify-between items-center mt-5 xs:mt-10 md:mt-14">
         <div className="w-2/5 flex justify-start">
-          <p className="text-center xxs:text-left my-4 font-semibold text-gray-800 xxs:text-base xs:text-xl">Total : </p>
+          <p className="text-center xxs:text-left my-4 font-semibold text-gray-800 xxs:text-base xs:text-xl">Total : {data?.length}</p>
         </div>
         <div className="w-3/5">
           <form>
@@ -62,8 +93,9 @@ const AdminManageUsers = () => {
                         {d?.role}
                       </td>
                       <td className="px-3 sm:px-6 lg:px-4 xl:px-6 py-3 text-center">
-                        <button disabled={d.role.match('admin')} className="btn btn-xs xl:btn-sm text-gray-50 bg-green-600 border-none hover:bg-green-500 me-2">Make Admin</button>
-                        <button disabled={d.role === 'super-admin'} className="btn btn-xs xl:btn-sm text-gray-50 bg-red-600 border-none hover:bg-red-500">Delete</button>
+                        {!d.role.match('admin') && <button onClick={() => handleMakeAdminButton(d._id)} className="btn btn-xs xl:btn-sm text-gray-50 bg-green-600 border-none hover:bg-green-500 me-2">Make Admin</button>}
+                        {d.role === 'admin' && <button onClick={() => handleRemoveAdminButton(d._id)} className="btn btn-xs xl:btn-sm text-gray-50 bg-orange-600 border-none hover:bg-orange-500 me-2">Remove Admin</button>}
+                        <button onClick={() => handleDeleteUserButton(d._id)} disabled={d.role === 'super-admin'} className="btn btn-xs xl:btn-sm text-gray-50 bg-red-600 border-none hover:bg-red-500">Delete</button>
                       </td>
                     </tr>
                   )

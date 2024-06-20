@@ -35,7 +35,7 @@ const AdminSmallSidebar = ({ drawerOpen, setDrawerOpen }) => {
                                 </ul>
                             </details>
                         </li>
-                        <li className='mt-3'><NavLink to='manage-users' className={({ isActive }) => isActive ? "bg-primary hover:bg-primary text-gray-950 hover:text-gray-950" : "bg-gray-300 text-gray-950 hover:bg-primary hover:text-gray-950"}><FaUsers></FaUsers>Manage Users</NavLink></li>
+                        {(storedUser?.role === 'super-admin') && <li className='mt-3'><NavLink to='manage-users' className={({ isActive }) => isActive ? "bg-primary hover:bg-primary text-gray-950 hover:text-gray-950" : "bg-gray-300 text-gray-950 hover:bg-primary hover:text-gray-950"}><FaUsers></FaUsers>Manage Users</NavLink></li>}
                     </ul>
                 </div>
                 <div className='mx-3 mb-1 mt-5' onClick={() => handleSignOut()}>

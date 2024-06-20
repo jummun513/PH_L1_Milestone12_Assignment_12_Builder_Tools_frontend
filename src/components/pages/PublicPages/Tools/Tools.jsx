@@ -2,7 +2,7 @@
 const Tools = () => {
     return (
         <div>
-            Tools page
+            <div>This is tools</div>
         </div>
     );
 };
