@@ -13,17 +13,17 @@ export const deleteSingleData = async (endpoint) => {
     );
 };
 
-// export const addData = async (endpoint, data) => {
-//     return await axios.post(
-//         `${import.meta.env.VITE_serverSideLink}/api/${endpoint}`,
-//         data,
-//         {
-//             headers: {
-//                 "Content-Type": "multipart/form-data",
-//             },
-//         }
-//     );
-// };
+export const addBlogs = async (endpoint, data) => {
+    return await axios.post(
+        `${import.meta.env.VITE_serverSideLink}/api/v1/${endpoint}`,
+        data,
+        {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }
+    );
+};
 
 // export const putData = async (endpoint, data) => {
 //     return await axios.put(

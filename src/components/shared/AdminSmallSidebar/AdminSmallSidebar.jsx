@@ -4,6 +4,8 @@ import { useAuth } from "../../../providers/AuthProvider";
 import { FaProductHunt, FaUsers } from "react-icons/fa";
 import navLogo from '../../../assets/images/logo.png';
 import { AiOutlineClose } from "react-icons/ai";
+import { FaBlog } from "react-icons/fa";
+import { MdSpaceDashboard } from "react-icons/md";
 
 const AdminSmallSidebar = ({ drawerOpen, setDrawerOpen }) => {
     const { storedUser, logOut } = useAuth();
@@ -23,7 +25,7 @@ const AdminSmallSidebar = ({ drawerOpen, setDrawerOpen }) => {
                         </Link>
                     </div>
                     <ul id='admin_panel_sidebar' className="menu mt-7 h-fit">
-                        <li><NavLink to='dashboard' className={({ isActive }) => isActive ? "bg-primary hover:bg-primary text-gray-950 hover:text-gray-950" : "bg-gray-300 text-gray-950 hover:bg-primary hover:text-gray-950"}><FaUsers></FaUsers>Dashboard</NavLink></li>
+                        <li><NavLink to='dashboard' className={({ isActive }) => isActive ? "bg-primary hover:bg-primary text-gray-950 hover:text-gray-950" : "bg-gray-300 text-gray-950 hover:bg-primary hover:text-gray-950"}><MdSpaceDashboard></MdSpaceDashboard>Dashboard</NavLink></li>
                         <li className='mt-3'>
                             <details>
                                 <summary className='bg-gray-300 text-gray-950 hover:bg-primary hover:text-gray-950'>
@@ -32,6 +34,17 @@ const AdminSmallSidebar = ({ drawerOpen, setDrawerOpen }) => {
                                 <ul className="p-2 mt-2">
                                     <li className='text-gray-100 mb-1'><NavLink to='manage-tools' className={({ isActive }) => isActive ? "bg-primary hover:bg-primary text-gray-950 hover:text-gray-950" : "text-gray-50 hover:bg-primary hover:text-gray-50"}>All Tools</NavLink></li>
                                     <li className='text-gray-100'><NavLink to='add-new-tool' className={({ isActive }) => isActive ? "bg-primary hover:bg-primary text-gray-950 hover:text-gray-950" : "text-gray-50 hover:bg-primary hover:text-gray-50"}>Add New Tool</NavLink></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li className='mt-3'>
+                            <details>
+                                <summary className='bg-gray-300 text-gray-950 hover:bg-primary hover:text-gray-950'>
+                                    <FaBlog /> Manage Blogs
+                                </summary>
+                                <ul className="p-2 mt-2">
+                                    <li className='text-gray-100 mb-1'><NavLink to='manage-blogs' className={({ isActive }) => isActive ? "bg-primary hover:bg-primary text-gray-950 hover:text-gray-950" : "text-gray-50 hover:bg-primary hover:text-gray-50"}>All Blogs</NavLink></li>
+                                    <li className='text-gray-100'><NavLink to='add-new-blog' className={({ isActive }) => isActive ? "bg-primary hover:bg-primary text-gray-950 hover:text-gray-950" : "text-gray-50 hover:bg-primary hover:text-gray-50"}>Add New Blog</NavLink></li>
                                 </ul>
                             </details>
                         </li>

@@ -170,9 +170,6 @@ const Register = () => {
                                         </div>
                                     )}
                                 />
-                                {/* {
-                                    ((error.includes('email-already-in-use')) && <p className='text-xs sm:text-sm mt-1 sm:mt-3 text-red-600'>This email is already register!</p>)
-                                } */}
                             </div>
 
                             {/* password field  */}
@@ -207,9 +204,6 @@ const Register = () => {
                                         (password.current?.value !== null) && (showPassword ? <BiShow onClick={() => { setShowPassword(!showPassword) }} className='cursor-pointer text-gray-700 h-4 w-4 sm:h-6 sm:w-6 ms-2 md:ms-4'></BiShow> : <BiHide onClick={() => { setShowPassword(!showPassword) }} className='cursor-pointer text-gray-700 h-4 w-4 sm:h-6 sm:w-6 ms-2 md:ms-4'></BiHide>)
                                     }
                                 </div>
-                                {/* {
-                                    error.includes('invalid_password') && <p className='text-xs sm:text-sm mt-1 sm:mt-3 text-red-600'>Password must have contain one lowercase&#40;a-z&#41;, one uppercase&#40;A-Z&#41;, one number&#40;0-9&#41;, one special character &#40;!,@,#,$,%,^,&,*&#41; and length must be 8 to 16</p>
-                                } */}
                             </div>
 
                             {/*confirm password field  */}

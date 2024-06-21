@@ -22,6 +22,8 @@ import PrivateUserRoutes from "./authGuard/PrivateUserRoutes";
 import PrivateSuperAdminRoutes from "./authGuard/PrivateSuperAdminRoutes";
 import PrivateRoutes from "./authGuard/PrivateRoutes";
 import AddReview from "../components/pages/ProtectedPages/UserDashboardPages/AddReview/AddReview";
+import AdminAddBlog from "../components/pages/ProtectedPages/AdminDashboardPages/AdminAddBlog/AdminAddBlog";
+import AdminManageBlogs from "../components/pages/ProtectedPages/AdminDashboardPages/AdminManageBlogs/AdminManageBlogs";
 
 export const router = createBrowserRouter([
     {
@@ -74,6 +76,14 @@ export const router = createBrowserRouter([
             {
                 path: 'manage-tools',
                 element: <AdminManageTools></AdminManageTools>,
+            },
+            {
+                path: 'add-new-blog',
+                element: <AdminAddBlog></AdminAddBlog>,
+            },
+            {
+                path: 'manage-blogs',
+                element: <AdminManageBlogs></AdminManageBlogs>,
             },
             {
                 path: 'manage-users',
