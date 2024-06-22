@@ -24,6 +24,7 @@ import PrivateRoutes from "./authGuard/PrivateRoutes";
 import AddReview from "../components/pages/ProtectedPages/UserDashboardPages/AddReview/AddReview";
 import AdminAddBlog from "../components/pages/ProtectedPages/AdminDashboardPages/AdminAddBlog/AdminAddBlog";
 import AdminManageBlogs from "../components/pages/ProtectedPages/AdminDashboardPages/AdminManageBlogs/AdminManageBlogs";
+import SingleBlog from "../components/pages/PublicPages/SingleBlog/SingleBlog";
 
 export const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>,
+            },
+            {
+                path: '/blog/:blogId',
+                element: <SingleBlog></SingleBlog>,
             },
             {
                 path: '/login',

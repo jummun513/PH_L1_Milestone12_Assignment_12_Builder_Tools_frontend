@@ -14,9 +14,10 @@ const category = [
 ]
 
 const AdminAddBlog = () => {
-    const { control, handleSubmit, formState: { errors }, reset } = useForm();
+    const { control, handleSubmit, formState: { errors }, reset, register } = useForm();
     const [isLoading, setIsLoading] = useState(false);
     const { mutateAsync, isSuccess } = useAddBlog();
+    const formData = new FormData();
 
     const config = {
         showTooltip: true,
@@ -24,9 +25,17 @@ const AdminAddBlog = () => {
     }
 
     const onSubmit = async (data) => {
-        setIsLoading(true);
         try {
-            await mutateAsync(data);
+            const { image, ...rest } = data;
+            if (image instanceof FileList && image.length > 0) {
+                formData.append("file", image[0]);
+            }
+            formData.append("data", JSON.stringify(rest));
+
+            setIsLoading(true);
+
+            await mutateAsync(formData);
+
             if (isSuccess) {
                 Swal.fire("Successfully! Added.", "", "success");
                 reset();
@@ -69,30 +78,19 @@ const AdminAddBlog = () => {
                         />
                     </div>
 
-                    {/* category field */}
+                    {/* file field */}
                     <div className="relative z-0 w-full mb-6 xs:mb-10 group">
                         <Controller
-                            name="category"
+                            name=""
                             control={control}
-                            rules={{ required: 'Category is required' }}
+                            rules={{ required: 'Image is required' }}
                             defaultValue=""
-                            render={({ field }) => (
+                            render={() => (
                                 <div>
-                                    <select
-                                        {...field}
-                                        id="blogCategory"
-                                        className={`w-full text-gray-700 border p-2 rounded mt-1 mb-2 focus:outline-none ${errors.gender ? 'border-red-500' : 'border-gray-300'}`}
-                                    >
-                                        <option value="">Select Category</option>
-                                        {
-                                            category.map((item, idx) => (
-                                                <option key={idx} value={item.value}>{item.label}</option>
-                                            ))
-                                        }
-                                    </select>
-                                    {errors?.category &&
-                                        <p className='text-xs sm:text-sm mt-1 sm:mt-3 text-red-600'>{errors?.category?.message}</p>
-
+                                    <label htmlFor="blogFile" className="block mb-2 md:mb-3 text-sm xl:text-base font-medium text-gray-900">Heading Photo <sup className='text-red-500'>*</sup></label>
+                                    <input {...register('image')} id="blogFile" type="file" className="file-input file-input-bordered text-gray-900 bg-transparent border-gray-800 w-full" />
+                                    {errors?.image &&
+                                        <p className='text-xs sm:text-sm mt-1 sm:mt-3 text-red-600'>{errors?.image?.message}</p>
                                     }
                                 </div>
                             )
@@ -118,6 +116,37 @@ const AdminAddBlog = () => {
                                     />
                                     {errors?.content &&
                                         <p className='text-xs sm:text-sm mt-1 sm:mt-3 text-red-600'>{errors?.content?.message}</p>
+
+                                    }
+                                </div>
+                            )
+                            }
+                        />
+                    </div>
+
+                    {/* category field */}
+                    <div className="relative z-0 w-full mb-6 xs:mb-10 group">
+                        <Controller
+                            name="category"
+                            control={control}
+                            rules={{ required: 'Category is required' }}
+                            defaultValue=""
+                            render={({ field }) => (
+                                <div>
+                                    <select
+                                        {...field}
+                                        id="blogCategory"
+                                        className={`w-full text-gray-700 border p-2 rounded mt-1 mb-2 focus:outline-none ${errors.gender ? 'border-red-500' : 'border-gray-300'}`}
+                                    >
+                                        <option value="">Select Category</option>
+                                        {
+                                            category.map((item, idx) => (
+                                                <option key={idx} value={item.value}>{item.label}</option>
+                                            ))
+                                        }
+                                    </select>
+                                    {errors?.category &&
+                                        <p className='text-xs sm:text-sm mt-1 sm:mt-3 text-red-600'>{errors?.category?.message}</p>
 
                                     }
                                 </div>

@@ -19,10 +19,17 @@ export const addBlogs = async (endpoint, data) => {
         data,
         {
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "multipart/form-data",
             },
         }
     );
+};
+
+export const getSingleData = async (endpoint) => {
+    const res = await axios.get(
+        `${import.meta.env.VITE_serverSideLink}/api/v1/${endpoint}`
+    );
+    return res.data;
 };
 
 // export const putData = async (endpoint, data) => {
