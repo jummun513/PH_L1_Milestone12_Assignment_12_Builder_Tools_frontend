@@ -13,7 +13,7 @@ export const deleteSingleData = async (endpoint) => {
     );
 };
 
-export const addBlogs = async (endpoint, data) => {
+export const addData = async (endpoint, data) => {
     return await axios.post(
         `${import.meta.env.VITE_serverSideLink}/api/v1/${endpoint}`,
         data,

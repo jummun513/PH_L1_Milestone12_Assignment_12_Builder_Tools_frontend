@@ -69,7 +69,7 @@ const AdminAddBlog = () => {
                             defaultValue=""
                             render={({ field }) => (<div>
                                 <label htmlFor="blogTitle" className="block mb-2 text-sm xl:text-base font-medium text-gray-900">Title <sup className='text-red-500'>*</sup></label>
-                                <input {...field} type="text" id="blogTitle" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" />
+                                <input {...field} type="text" id="blogTitle" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" />
                                 {errors?.title &&
                                     <p className='text-xs sm:text-sm mt-1 sm:mt-3 text-red-600'>{errors?.title?.message}</p>
 

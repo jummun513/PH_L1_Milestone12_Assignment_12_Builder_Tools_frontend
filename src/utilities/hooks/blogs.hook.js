@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
-import { addBlogs, getAllData, getSingleData } from "../api/allServerSideRequest";
+import { addData, getAllData, getSingleData } from "../api/allServerSideRequest";
 
 export const useGetAllBlogs = () => {
     const result = useQuery({
@@ -12,7 +12,7 @@ export const useGetAllBlogs = () => {
 export const useAddBlog = () => {
     const queryClient = useQueryClient();
     const result = useMutation({
-        mutationFn: (data) => addBlogs("blog", data),
+        mutationFn: (data) => addData("blog", data),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["getAllBlogs"] });
         },
