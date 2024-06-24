@@ -26,6 +26,7 @@ import AdminAddBlog from "../components/pages/ProtectedPages/AdminDashboardPages
 import AdminManageBlogs from "../components/pages/ProtectedPages/AdminDashboardPages/AdminManageBlogs/AdminManageBlogs";
 import SingleBlog from "../components/pages/PublicPages/SingleBlog/SingleBlog";
 import PurchasePage from "../components/pages/ProtectedPages/PurchasePage/PurchasePage";
+import ToolDetailsPage from "../components/pages/PublicPages/ToolDetailsPage/ToolDetailsPage";
 
 export const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About />,
+            },
+            {
+                path: '/tool/:toolId',
+                element: <ToolDetailsPage />,
             },
             {
                 path: '/tool/:toolId/purchase',

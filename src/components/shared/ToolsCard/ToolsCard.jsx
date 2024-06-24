@@ -42,7 +42,7 @@ const ToolsCard = (data) => {
             </div>
             <div className="p-6 pt-0">
                 <button
-                    onClick={() => navigate(`/tool/${_id}/purchase`)}
+                    onClick={() => navigate(`/tool/${_id}`)}
                     className="block w-full select-none rounded-lg bg-gradient-to-l text-slate-50 from-grad to-primary py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                     type="button"
                 >
