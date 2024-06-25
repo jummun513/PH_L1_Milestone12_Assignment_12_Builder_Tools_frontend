@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useGetSingleTool } from "../../../../utilities/hooks/tools.hook";
 import Loading from "../../../shared/Loading/Loading";
 import { useAuth } from "../../../../providers/AuthProvider";
@@ -11,20 +11,20 @@ const PurchasePage = () => {
     const { toolId } = useParams();
     const { data, isError, isLoading: getSingleToolLoading, error } = useGetSingleTool(toolId);
     const { storedUser } = useAuth();
-    const { control, handleSubmit, formState: { errors }, reset } = useForm({ defaultValues: { email: storedUser?.email } });
+    const { control, handleSubmit, formState: { errors }, reset } = useForm({ defaultValues: { email: storedUser?.email, toolId: toolId } });
     const [isLoading, setIsLoading] = useState(false);
     const { mutateAsync, isSuccess } = useAddOrder();
-    const formData = new FormData();
+    const navigate = useNavigate();
 
     const onSubmit = async (data) => {
         try {
-            formData.append("data", JSON.stringify(data));
             setIsLoading(true);
-            await mutateAsync(formData);
+            await mutateAsync(data);
 
             if (isSuccess) {
                 Swal.fire("Successfully! Added.", "", "success");
                 reset();
+                navigate(`/tool/${storedUser.email}/checkout/${toolId}`);
             }
         } catch (error) {
             Swal.fire("There was a problem!", "", "error");

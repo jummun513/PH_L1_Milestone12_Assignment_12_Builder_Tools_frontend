@@ -1,5 +1,5 @@
-import { useMutation, useQueryClient } from "react-query";
-import { addData } from "../api/allServerSideRequest";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import { addDataWithOutFile, getFilteredData } from "../api/allServerSideRequest";
 
 // export const useGetAllBlogs = () => {
 //     const result = useQuery({
@@ -12,7 +12,7 @@ import { addData } from "../api/allServerSideRequest";
 export const useAddOrder = () => {
     const queryClient = useQueryClient();
     const result = useMutation({
-        mutationFn: (data) => addData("order", data),
+        mutationFn: (data) => addDataWithOutFile("order", data),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["getAllOrders", "getUserOrders"] });
         },
@@ -21,10 +21,10 @@ export const useAddOrder = () => {
 };
 
 
-// export const useGetSingleBlog = (id) => {
-//     const result = useQuery({
-//         queryKey: ["getSingleBlog"],
-//         queryFn: () => getSingleData(`blog/${id}`),
-//     });
-//     return result;
-// };
+export const useGetSingleOrderForSpecificUser = (params) => {
+    const result = useQuery({
+        queryKey: ["getSingleFilterOrder"],
+        queryFn: () => getFilteredData('order', params),
+    });
+    return result;
+};

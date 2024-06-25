@@ -27,6 +27,7 @@ import AdminManageBlogs from "../components/pages/ProtectedPages/AdminDashboardP
 import SingleBlog from "../components/pages/PublicPages/SingleBlog/SingleBlog";
 import PurchasePage from "../components/pages/ProtectedPages/PurchasePage/PurchasePage";
 import ToolDetailsPage from "../components/pages/PublicPages/ToolDetailsPage/ToolDetailsPage";
+import CheckoutPage from "../components/pages/ProtectedPages/CheckoutPage/CheckoutPage";
 
 export const router = createBrowserRouter([
     {
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
             {
                 path: '/tool/:toolId/purchase',
                 element: <PrivateUserRoutes><PurchasePage /></PrivateUserRoutes>,
+            },
+            {
+                path: '/tool/:email/checkout/:toolId',
+                element: <PrivateUserRoutes><CheckoutPage /></PrivateUserRoutes>,
             },
         ]
     },
