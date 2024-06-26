@@ -13,7 +13,7 @@ const PurchasePage = () => {
     const { storedUser } = useAuth();
     const { control, handleSubmit, formState: { errors }, reset } = useForm({ defaultValues: { email: storedUser?.email, toolId: toolId } });
     const [isLoading, setIsLoading] = useState(false);
-    const { mutateAsync, isSuccess } = useAddOrder();
+    const { mutateAsync } = useAddOrder();
     const navigate = useNavigate();
 
     const onSubmit = async (data) => {
@@ -21,13 +21,11 @@ const PurchasePage = () => {
             setIsLoading(true);
             await mutateAsync(data);
 
-            if (isSuccess) {
-                Swal.fire("Successfully! Added.", "", "success");
-                reset();
-                navigate(`/tool/${storedUser.email}/checkout/${toolId}`);
-            }
+            Swal.fire("Successfully! Added.", "", "success");
+            reset();
+            navigate(`/tool/${storedUser.email}/checkout/${toolId}`);
         } catch (error) {
-            Swal.fire("There was a problem!", "", "error");
+            Swal.fire((error?.response?.data?.message || "There was a problem!"), "", "error");
             console.log(error);
         }
         setIsLoading(false);

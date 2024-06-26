@@ -9,6 +9,7 @@ const CheckoutPage = () => {
     if (getSingleToolLoading) {
         return <div className="h-[80vh] flex justify-center items-center"><Loading></Loading></div>;
     }
+
     if ((isError)) {
         return <div>Error: {error?.message}</div>;
     }
