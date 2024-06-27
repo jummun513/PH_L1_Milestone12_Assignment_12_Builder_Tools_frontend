@@ -5,6 +5,7 @@ import './Banner.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import LogoSlider from "./LogoSlider/LogoSlider";
+import { useNavigate } from "react-router-dom";
 
 
 const carousel = [
@@ -14,6 +15,7 @@ const carousel = [
 ]
 
 const Banner = () => {
+    const navigate = useNavigate();
     useEffect(() => {
         AOS.init();
     }, [])
@@ -84,7 +86,7 @@ const Banner = () => {
                         data-aos-once="false">
                         <h1 className="text-primary text-xl xsm:text-2xl md:text-3xl xl:text-5xl text-center md:text-left">Jummun and Jaber established the Builder Tool Co.® in 1981.</h1>
                         <p className="text-justify mt-5 md:mt-8 md:text-left text-sm sm:text-base md:text-lg">Builder Tool’s product line is manufactured for the Professional Craftsman. Our tools are created for everyday use by the professional cement finisher, brick mason, asphalt paver, tile setter, plasterer, or drywall craftsman.</p>
-                        <button className="btn mt-3 md:mt-5 btn-sm lg:btn-md bg-gradient-to-r from-grad to-primary border border-primary text-white hover:border-secondary">All Products</button>
+                        <button onClick={() => navigate('/tools')} className="btn mt-3 md:mt-5 btn-sm lg:btn-md bg-gradient-to-r from-grad to-primary border border-primary text-white hover:border-secondary">All Products</button>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ const ToolsCard = (data) => {
         <div className="relative flex w-[320px] lg:hover:bottom-1 flex-col rounded-xl bg-[#fefefe] bg-clip-border text-gray-700 shadow-md">
             <div className="mx-3 w-[300px] p-2 overflow-hidden mt-4 rounded-xl bg-[#f3f3f3] bg-clip-border text-gray-700">
                 <img
-                    src={img}
+                    src={img.url}
                     className="h-full w-full object-contain aspect-[4/3]"
                 />
             </div>
@@ -31,13 +31,13 @@ const ToolsCard = (data) => {
                 </div>
                 <div>
                     <p className="block font-sans text-sm leading-normal text-gray-900 font-normal antialiased opacity-75">
-                        Available stock: {quantity}<span className='font-normal'>pc.</span>
+                        Available stock: {quantity}<span className='font-normal'> pc.</span>
                     </p><p className="block font-sans text-sm leading-normal text-gray-900 font-normal antialiased opacity-75">
-                        Minimum order: {minOrder}<span className='font-normal'></span>
+                        Minimum order: {minOrder}<span className='font-normal'> pc.</span>
                     </p>
                 </div>
                 <p className="block font-sans text-sm leading-normal text-gray-900 font-bold antialiased opacity-75">
-                    <span className='text-base'>{price}</span> <span className='font-normal'>per unit pc.</span>
+                    <span className='text-base'>${price}</span> <span className='font-normal'>per unit pc.</span>
                 </p>
             </div>
             <div className="p-6 pt-0">

@@ -4,11 +4,12 @@ import './FeatureTools.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Loading from '../../../../shared/Loading/Loading';
 import ToolsCard from "../../../../shared/ToolsCard/ToolsCard";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useGetAllTools } from "../../../../../utilities/hooks/tools.hook";
 
 const FeatureTools = () => {
     const { data, isError, isLoading, error } = useGetAllTools();
+    const navigate = useNavigate();
 
     if (isLoading) {
         return <div className="h-[80vh] flex justify-center items-center"><Loading></Loading></div>;
@@ -53,7 +54,7 @@ xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5">
                                     mandatory.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
                                 }
                             </CardContainer>
-                            <p className="text-center mt-20 md:mt-32"><Link><button className="btn btn-wide text-slate-50">See All Tools</button></Link></p>
+                            <p className="text-center mt-20 md:mt-32"><button onClick={() => navigate('/tools')} className="btn btn-wide text-slate-50">See All Tools</button></p>
                         </div>
                     </TabPanel>
                     <TabPanel>
@@ -63,7 +64,7 @@ xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5">
                                     ladderStair.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
                                 }
                             </CardContainer>
-                            <p className="text-center mt-20 md:mt-32"><Link><button className="btn btn-wide text-slate-50">See All Tools</button></Link></p>
+                            <p className="text-center mt-20 md:mt-32"><button onClick={() => navigate('/tools')} className="btn btn-wide text-slate-50">See All Tools</button></p>
                         </div>
                     </TabPanel>
                     <TabPanel>
@@ -73,7 +74,7 @@ xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5">
                                     electric.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
                                 }
                             </CardContainer>
-                            <p className="text-center mt-20 md:mt-32"><Link><button className="btn btn-wide text-slate-50">See All Tools</button></Link></p>
+                            <p className="text-center mt-20 md:mt-32"><button onClick={() => navigate('/tools')} className="btn btn-wide text-slate-50">See All Tools</button></p>
                         </div>
                     </TabPanel>
                     <TabPanel>
@@ -83,7 +84,7 @@ xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5">
                                     heavy.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)
                                 }
                             </CardContainer>
-                            <p className="text-center mt-20 md:mt-32"><Link><button className="btn btn-wide text-slate-50">See All Tools</button></Link></p>
+                            <p className="text-center mt-20 md:mt-32"><button onClick={() => navigate('/tools')} className="btn btn-wide text-slate-50">See All Tools</button></p>
                         </div>
                     </TabPanel>
                 </Tabs>

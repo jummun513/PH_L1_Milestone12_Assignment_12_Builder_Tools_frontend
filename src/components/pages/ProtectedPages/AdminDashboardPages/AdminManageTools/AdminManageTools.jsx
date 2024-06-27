@@ -48,7 +48,7 @@ const AdminManageTools = () => {
                                     Unit Price
                                 </th>
                                 <th scope="col" className="px-3 md:px-6 py-4">
-                                    Quantity
+                                    Available Quantity
                                 </th>
                                 <th scope="col" className="px-3 md:px-6 py-4 text-center">
                                     Action
@@ -62,15 +62,15 @@ const AdminManageTools = () => {
                                         <tr key={i} className="bg-white border-b hover:bg-gray-50">
                                             <td className="px-3 sm:px-6 lg:px-4 xl:px-6 py-3 text-gray-900 whitespace-nowrap">
                                                 <div className="md:flex items-center">
-                                                    <img className="w-10 md:w-16 mb-3 md:mb-0" src={d.img} alt={d.heading} />
+                                                    <img className="w-10 md:w-16 mb-3 md:mb-0" src={d.img.url} alt={d.heading} />
                                                     <span className="md:ms-5">{d.heading}</span>
                                                 </div>
                                             </td>
                                             <td className="px-3 sm:px-6 lg:px-4 xl:px-6 py-3 text-gray-800">
-                                                {d?.price}
+                                                $ {d?.price}
                                             </td>
                                             <td className="px-3 sm:px-6 lg:px-4 xl:px-6 py-3 text-gray-800">
-                                                {d?.quantity}
+                                                {d?.quantity} pc.
                                             </td>
                                             <td className="px-3 sm:px-6 lg:px-4 xl:px-6 py-3 text-center">
                                                 <button className="btn btn-sm xl:btn-md text-gray-50 bg-green-600 border-none hover:bg-green-500 me-2"><FiEdit /></button>

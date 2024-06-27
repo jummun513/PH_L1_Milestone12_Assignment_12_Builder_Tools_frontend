@@ -19,7 +19,7 @@ const ToolDetailsPage = () => {
             <h3 className="text-center mt-5 mb-20 text-xl sm:text-2xl 2xl:text-4xl font-bold text-gray-900">Tool Details Page</h3>
             <div className="w-full flex flex-col lg:flex-row ">
                 <div className="w-full lg:w-[35%] 2xl:w-[40%] me-5 flex items-center">
-                    <img className="w-full h-full" src={data?.img} alt="tool image" />
+                    <img className="w-full h-full" src={data?.img?.url} alt="tool image" />
                 </div>
                 <div className="mt-10 lg:mt-0 w-full lg:w-[65%] 2xl:w-[60%] relative overflow-x-auto">
                     <h4 className="mb-7 text-gray-800 font-semibold text-base sm:text-xl 2xl:text-2xl">Tool Details</h4>
@@ -35,16 +35,16 @@ const ToolDetailsPage = () => {
                             </tr>
                             <tr className="bg-white border border-t-0 hover:bg-slate-100">
                                 <th scope="row" className="text-gray-900 px-1 xxs:px-2 md:px-4 xl:px-6 py-2 md:py-4 text-start flex justify-between"><p>Minimum Order</p><p>:</p></th>
-                                <td className="text-gray-700 px-1 xxs:px-2 md:px-4 xl:px-6 py-2 md:py-4 text-start">{data?.minOrder}</td>
+                                <td className="text-gray-700 px-1 xxs:px-2 md:px-4 xl:px-6 py-2 md:py-4 text-start">{data?.minOrder} pc.</td>
                             </tr>
                             <tr className="bg-white border border-t-0 hover:bg-slate-100">
                                 <th scope="row" className="text-gray-900 px-1 xxs:px-2 md:px-4 xl:px-6 py-2 md:py-4 text-start flex justify-between"><p>Available Quantity</p><p>:</p></th>
-                                <td className="text-gray-700 px-1 xxs:px-2 md:px-4 xl:px-6 py-2 md:py-4 text-start">{data?.quantity}</td>
+                                <td className="text-gray-700 px-1 xxs:px-2 md:px-4 xl:px-6 py-2 md:py-4 text-start">{data?.quantity} pc.</td>
                             </tr>
                         </tbody>
                     </table>
                     <div className="flex items-start justify-between mt-8">
-                        <p className="flex items-center text-xl md:text-2xl 2xl:text-3xl text-green-600 font-semibold md:ps-5">{data?.price}<sub className="font-normal ml-2">(per unit)</sub></p>
+                        <p className="flex items-center text-xl md:text-2xl 2xl:text-3xl text-green-600 font-semibold md:ps-5">$ {data?.price}<sub className="font-normal ml-2">(per unit)</sub></p>
                         <p><button onClick={() => navigate(`/tool/${toolId}/purchase`)} type="button" className="btn btn-xs sm:btn-sm xl:btn-md bg-primary hover:bg-secondary border-none text-gray-50">Purchase Now</button></p>
                     </div>
                 </div>
