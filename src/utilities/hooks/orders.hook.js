@@ -1,14 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { addDataWithOutFile, getFilteredData } from "../api/allServerSideRequest";
 
-// export const useGetAllBlogs = () => {
-//     const result = useQuery({
-//         queryKey: ["getAllBlogs"],
-//         queryFn: () => getAllData("blogs"),
-//     });
-//     return result;
-// };
-
 export const useAddOrder = () => {
     const queryClient = useQueryClient();
     const result = useMutation({
@@ -16,6 +8,13 @@ export const useAddOrder = () => {
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["getAllOrders", "getUserOrders"] });
         },
+    });
+    return result;
+};
+
+export const usePaymentOrder = () => {
+    const result = useMutation({
+        mutationFn: (data) => addDataWithOutFile("order/payment", data)
     });
     return result;
 };

@@ -1,10 +1,15 @@
 import { useParams } from "react-router-dom";
-import { useGetSingleOrderForSpecificUser } from "../../../../utilities/hooks/orders.hook";
+import { useGetSingleOrderForSpecificUser, usePaymentOrder } from "../../../../utilities/hooks/orders.hook";
 import Loading from "../../../shared/Loading/Loading";
 
 const CheckoutPage = () => {
     const { email, toolId } = useParams();
     const { data, isError, isLoading: getSingleToolLoading, error } = useGetSingleOrderForSpecificUser({ email: email, toolId: toolId });
+    const { mutateAsync } = usePaymentOrder();
+
+    const handleSubmit = async (id) => {
+        await mutateAsync({ id: id });
+    }
 
     if (getSingleToolLoading) {
         return <div className="h-[80vh] flex justify-center items-center"><Loading></Loading></div>;
@@ -69,7 +74,7 @@ xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5 mb-20 xl:mb-28">
                         </tbody>
                     </table>
                 </div>
-                <p className="text-end mt-5 md:mt-8"><button className="btn btn-xs sm:btn-sm xl:btn-md bg-primary hover:bg-secondary border-none text-gray-50">Proceed to pay</button></p>
+                <p onClick={() => handleSubmit(data?._id)} className="text-end mt-5 md:mt-8"><button className="btn btn-xs sm:btn-sm xl:btn-md bg-primary hover:bg-secondary border-none text-gray-50">Proceed to pay</button></p>
             </div>
         </div>
     );

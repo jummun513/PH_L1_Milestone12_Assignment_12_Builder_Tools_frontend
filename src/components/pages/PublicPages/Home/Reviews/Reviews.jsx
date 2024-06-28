@@ -1,20 +1,12 @@
-// import styled from "styled-components";
-// import img from '../../../../assets/images/reviews-bg.svg';
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Review from "./Review/Review";
-// import styled from "styled-components";
-
-const review = [
-    { user: 1 },
-    { user: 2.5 },
-    { user: 3 },
-    { user: 3.5 },
-    { user: 4 },
-    { user: 5 },
-]
+import { useGetAllReviews } from "../../../../../utilities/hooks/reviews.hook";
+import Loading from "../../../../shared/Loading/Loading";
 
 const Reviews = () => {
+    const { data, isError, isLoading, error } = useGetAllReviews();
+
     const [sliderRef] = useKeenSlider({
         loop: true,
         breakpoints: {
@@ -68,6 +60,14 @@ const Reviews = () => {
         ]
     );
 
+    if (isLoading) {
+        return <div className="h-[80vh] flex justify-center items-center"><Loading></Loading></div>;
+    }
+
+    if (error && isError) {
+        return <div>Error: {error.message}</div>;
+    }
+
     return (
         <div className="relative grid z-10 mb-40 md:mb-56 xl:mb-72">
             <div className="relative">
@@ -79,7 +79,7 @@ const Reviews = () => {
             </div>
             <div ref={sliderRef} className="keen-slider mt-48 sm:mt-60 md:mt-72 xl:mt-96 mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl
 xxl:max-w-screen-xxl">
-                {review.map((item, idx) => {
+                {data.map((item, idx) => {
                     return (
                         <div key={idx} className="keen-slider__slide flex justify-center items-center">
                             <Review item={item}></Review>
@@ -92,33 +92,3 @@ xxl:max-w-screen-xxl">
 };
 
 export default Reviews;
-
-// const Background = styled.div`
-// background-image: url(${img});
-// height: 800px;
-// background-position: center;
-// background-size: contain;
-// opacity: 0.3;
-// background-repeat: no-repeat;
-// `
-
-function Arrow(props) {
-    const { left, onClick } = props;
-    return (
-        <svg
-            onClick={onClick}
-            className={`arrow ${left ? "arrow--left" : "arrow--right"
-                }`}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-        >
-            {left && (
-                <path fill="#DFE0DF" className="hover:fill-primary duration-200 ease-in-out" d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-            )}
-            {!left && (
-                <path fill="#DFE0DF" className="hover:fill-primary duration-200 ease-in-out" d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-            )}
-        </svg>
-    )
-
-}

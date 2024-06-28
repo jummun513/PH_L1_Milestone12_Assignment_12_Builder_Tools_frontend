@@ -50,8 +50,8 @@ const Navbar = () => {
                         </div>
                         <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
                             <div className="flex flex-shrink-0 items-center">
-                                <img className="h-8 md:h-10 xl:h-14 w-auto" src={navLogo}
-                                    alt="Company Logo" />
+                                <Link to={'/'}><img className="h-8 md:h-10 xl:h-14 w-auto" src={navLogo}
+                                    alt="Company Logo" /></Link>
                             </div>
                             <ul className="hidden md:flex md:ms-10 lg:ms-14 items-center md:space-x-6 lg:space-x-12">
                                 {navItem.map((item, idx) => (
