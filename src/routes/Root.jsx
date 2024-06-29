@@ -7,7 +7,6 @@ import About from '../components/pages/PublicPages/About/About';
 import Login from '../components/pages/PublicPages/Login/Login';
 import Register from '../components/pages/PublicPages/Register/Register';
 import NotFound from "../components/shared/NotFound/NotFound";
-import Test from "../layout/Test";
 import AdminDashboardLayout from "../layout/AdminDashboardLayout";
 import AdminDashboard from "../components/pages/ProtectedPages/AdminDashboardPages/AdminDashboard/AdminDashboard";
 import AdminAddTool from "../components/pages/ProtectedPages/AdminDashboardPages/AdminAddTool/AdminAddTool";
@@ -28,6 +27,8 @@ import SingleBlog from "../components/pages/PublicPages/SingleBlog/SingleBlog";
 import PurchasePage from "../components/pages/ProtectedPages/PurchasePage/PurchasePage";
 import ToolDetailsPage from "../components/pages/PublicPages/ToolDetailsPage/ToolDetailsPage";
 import CheckoutPage from "../components/pages/ProtectedPages/CheckoutPage/CheckoutPage";
+import PaymentSuccess from "../components/shared/PaymentSuccess/PaymentSuccess";
+import PaymentFailed from "../components/shared/PaymentFailed/PaymentFailed";
 
 export const router = createBrowserRouter([
     {
@@ -131,12 +132,16 @@ export const router = createBrowserRouter([
             {
                 path: 'wishlist',
                 element: <PrivateUserRoutes><UserWishList /></PrivateUserRoutes>,
-            }
+            },
         ]
     },
     {
-        path: "/test",
-        element: <Test></Test>,
+        path: '/checkout/:orderId/payment/success',
+        element: <PrivateUserRoutes><PaymentSuccess /></PrivateUserRoutes>,
+    },
+    {
+        path: '/checkout/:orderId/payment/failed',
+        element: <PrivateUserRoutes><PaymentFailed /></PrivateUserRoutes>,
     },
     {
         path: "*",

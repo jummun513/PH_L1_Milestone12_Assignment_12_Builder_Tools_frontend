@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
-import { addDataWithOutFile, getFilteredData } from "../api/allServerSideRequest";
+import { addDataWithOutFile, getFilteredData, getSingleData } from "../api/allServerSideRequest";
 
 export const useAddOrder = () => {
     const queryClient = useQueryClient();
@@ -19,6 +19,13 @@ export const usePaymentOrder = () => {
     return result;
 };
 
+export const useGetSingleOrderById = (id) => {
+    const result = useQuery({
+        queryKey: ["getSingleFilterOrder"],
+        queryFn: () => getSingleData(`order/${id}`),
+    });
+    return result;
+};
 
 export const useGetSingleOrderForSpecificUser = (params) => {
     const result = useQuery({
