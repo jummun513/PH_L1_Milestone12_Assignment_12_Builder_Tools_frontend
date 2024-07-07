@@ -10,9 +10,9 @@ A full-stack website for construction site tools manufactured company.
 
 ### Project Installation In Local Server:
 
-1. Clone the repository.
+1. Clone the repository. Then go to the root directory where the package.json file located.
 2. Install dependencies using `npm install`.
-3. Rename `.env.example` to `.env`.
+3. Rename `.env.example` to `.env.local`.
 4. Run the server using `npm run dev`.
 
 ### Configuration:

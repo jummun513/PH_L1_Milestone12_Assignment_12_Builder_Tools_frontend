@@ -10,7 +10,7 @@ const Reviews = () => {
     const [sliderRef] = useKeenSlider({
         loop: true,
         breakpoints: {
-            "(max-width: 1536px)": {
+            "(max-width: 1320px)": {
                 slides: {
                     perView: 2,
                     spacing: 10
