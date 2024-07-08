@@ -25,7 +25,7 @@ xxl:max-w-screen-xxl px-2 md:px-3 lg:px-20'>
                             <p className="text-sm md:text-lg text-primary">TAKE AN ADDITIONS</p>
                             <h2 className="text-sm md:text-2xl text-slate-50 mt-2 md:mt-4 font-black font-sans">Big Grinding Machine</h2>
                             <p className="text-xs md:text-sm my-1">Get 20% off your order only $100.00</p>
-                            <Link><button className="btn mt-1 md:mt-5 btn-xs md:btn-sm lg:btn-md bg-gradient-to-r from-grad to-primary border border-primary text-white hover:border-secondary">Buy Now</button></Link>
+                            <Link to={'/tool/64faeead0dcc7bd0b179d294'}><button className="btn mt-1 md:mt-5 btn-xs md:btn-sm lg:btn-md bg-gradient-to-r from-grad to-primary border border-primary text-white hover:border-secondary">Buy Now</button></Link>
                         </div>
                     </CardContainer1>
                     <CardContainer2 data-aos="fade-up"
@@ -37,7 +37,7 @@ xxl:max-w-screen-xxl px-2 md:px-3 lg:px-20'>
                         <div className="w-[70%] sm:w-1/2 z-10 ps-5 lg:ps-10">
                             <p className="text-lg sm:text-2xl md:text-4xl lg:text-6xl text-primary"><sup>OFF </sup>50%</p>
                             <p className="text-xs md:text-sm my-1">Get 20% off your order only $100.00</p>
-                            <Link><button className="btn mt-1 md:mt-5 btn-xs md:btn-sm lg:btn-md bg-gradient-to-r from-grad to-primary border border-primary text-white hover:border-secondary">Buy Now</button></Link>
+                            <Link to={'/tool/64faeead0dcc7bd0b179d285'}><button className="btn mt-1 md:mt-5 btn-xs md:btn-sm lg:btn-md bg-gradient-to-r from-grad to-primary border border-primary text-white hover:border-secondary">Buy Now</button></Link>
                         </div>
                     </CardContainer2>
                 </div>

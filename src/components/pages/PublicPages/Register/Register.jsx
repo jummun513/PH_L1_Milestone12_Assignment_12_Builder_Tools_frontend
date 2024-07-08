@@ -81,7 +81,7 @@ const Register = () => {
                         <img loading='lazy' src={url} alt="registration side bar image" />
                     </div>
                     <div className="w-full lg:w-[50%] lg:pl-10 flex flex-col items-center">
-                        <div className='h-16 w-16 xs:h-24 xs:w-24 rounded-full p-1 border-2 border-primary'><img loading='lazy' className='w-full h-full rounded-full' src={logo} alt="company logo in top" /></div>
+                        <div onClick={() => navigate('/')} className='cursor-pointer h-16 w-16 xs:h-24 xs:w-24 rounded-full p-1 border-2 border-primary'><img loading='lazy' className='w-full h-full rounded-full' src={logo} alt="company logo in top" /></div>
                         <h2 className="text-base xs:text-xl sm:text-2xl font-bold text-gray-800 mt-3 mb-8 md:mt-5 sm:mb-10 2xl:mb-16">Create New Account</h2>
 
                         {/* form start */}
