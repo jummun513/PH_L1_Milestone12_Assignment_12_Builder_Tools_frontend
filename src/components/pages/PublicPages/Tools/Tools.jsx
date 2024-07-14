@@ -1,6 +1,6 @@
 import { useGetAllTools } from "../../../../utilities/hooks/tools.hook";
 import Loading from "../../../shared/Loading/Loading";
-import ToolsCard from "../../../shared/ToolsCard/ToolsCard";
+import ToolsWithPagination from "./ToolsWithPagination/ToolsWithPagination";
 
 const Tools = () => {
     const { data, isError, isLoading, error } = useGetAllTools();
@@ -15,9 +15,7 @@ const Tools = () => {
         <div className="mx-auto xsm:max-w-screen-xsm sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl
 xxl:max-w-screen-xxl px-2 md:px-3 lg:px-5 mb-20 xl:mb-28">
             <h3 className="text-center mt-16 mb-12 text-xl sm:text-2xl 2xl:text-4xl font-bold text-gray-900">All Tools</h3>
-            <div className="grid gap-x-5 gap-y-7 2xl:gap-y-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center">
-                {data.map((item, idx) => <ToolsCard key={idx} data={item}></ToolsCard>)}
-            </div>
+            <ToolsWithPagination items={data} itemsPerPage={8}></ToolsWithPagination>
         </div>
     );
 };
